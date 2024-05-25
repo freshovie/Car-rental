@@ -1,0 +1,65 @@
+.navbar {
+margin: 0;
+  padding: 10px;
+
+  .navbar-brand {
+    font-weight: bold;
+    color: #3563e9;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .search-form {
+    display: flex;
+    align-items: center;
+
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      .search-icon,
+      .filter-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+      }
+
+      .search-icon {
+        left: 10px;
+        color: #3563e9;
+      }
+
+      .filter-icon {
+        right: 10px;
+        color: black;
+      }
+
+      .form-control {
+        width: 100%;
+        padding-left: 2.5rem; // Adjust the padding to make space for the icons
+        padding-right: 2.5rem; // Adjust the padding to make space for the icons
+        border-radius: 20px;
+        &::placeholder {
+          color: #5b7ee6; /* Change the color to your desired color */
+        }
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-top: 10px;
+
+    .icon {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .dropdown {
+        margin-right: 0px;
+      }
+}
+}

@@ -1,0 +1,116 @@
+.car-display {
+  .rentbtn1,
+  .rentbtn2 {
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+      background-color: #5a5a5a;
+      color: white;
+    }
+  }
+
+  .rentbtn1 {
+    background-color: #3563e9;
+  }
+
+  .rentbtn2 {
+    background-color: #54a6ff;
+  }
+  .car-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    @media screen and (max-width: 998px) {
+      flex-direction: column;
+      width: auto;
+    }
+  }
+  .car1d {
+    margin-top: 20px;
+    position: relative;
+    background-color: none;
+    gap: 10px;
+
+    .innercar {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: auto;
+      height: auto;
+    }
+    .fastcar {
+      position: absolute;
+      bottom: 10px;
+      left: 150px;
+      width: auto;
+      height: auto;
+    }
+    h1,
+    p,
+    button {
+      margin-top: 10px;
+      color: white;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.offup {
+  margin-top: 10px;
+  .picku {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    .arrows {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px; /* Adjust the size of the circle */
+      height: 50px; /* Adjust the size of the circle */
+      border-radius: 20%;
+      background-color: #3563e9; /* Circle background color */
+      color: white; /* Icon color */
+      font-size: 24px; /* Icon size */
+    }
+    .card {
+      padding: 10px 40px;
+      .topradio {
+        display: flex;
+        gap: 10px;
+      }
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+        .sections {
+          gap: 20px;
+          p{
+            font-size: 16px;
+            font-weight: 400;
+          }
+          .pwords{
+            color: #acbacf;
+          }
+        }
+        .vertical-line {
+          border-left: 1px solid #e7eef6; /* Line width and color */
+          height: 70px; /* Line height */
+          margin: 0 5px; /* Optional spacing */
+        }
+      }
+    }
+    @media screen and (max-width: 998px){
+        flex-direction: column;
+        width: 100%;
+    }
+  }
+}
