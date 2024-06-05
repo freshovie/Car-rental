@@ -39,7 +39,7 @@
 
     .innercar {
       position: absolute;
-      top: 10px;
+      top: 5px;
       left: 10px;
       width: auto;
       height: auto;
@@ -58,59 +58,212 @@
       color: white;
       margin-bottom: 10px;
     }
+    h1 {
+      font-size: 22px;
+    }
+    p,
+    button {
+      font-size: 17px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .car-cards {
+      .car1d {
+        .innercar {
+          position: absolute;
+          top: 0.5px;
+          left: 10px;
+          width: auto;
+          height: auto;
+          p {
+            font-size: 15px;
+          }
+          h1 {
+            font-weight: 600;
+            font-size: 20px;
+          }
+        }
+        .fastcar {
+          position: absolute;
+          bottom: 5px;
+          left: 130px;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
   }
 }
 
 .offup {
   margin-top: 10px;
+
   .picku {
     display: flex;
     width: 100%;
     gap: 10px;
     align-items: center;
     justify-content: space-between;
+
     .arrows {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50px; /* Adjust the size of the circle */
-      height: 50px; /* Adjust the size of the circle */
-      border-radius: 20%;
+      width: 100px; /* Adjust the size of the circle */
+      height: 50px;
+      border-radius: 50%; /* Circle shape */
       background-color: #3563e9; /* Circle background color */
       color: white; /* Icon color */
       font-size: 24px; /* Icon size */
     }
+
     .card {
-      padding: 10px 40px;
+      flex: 1 1 100%;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+
       .topradio {
         display: flex;
         gap: 10px;
+        align-items: center;
       }
+
       .card-body {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-        width: 100%;
         gap: 10px;
+
         .sections {
-          gap: 20px;
-          p{
+          flex: 1;
+          min-width: 120px; /* Ensure a minimum width for sections */
+          p {
             font-size: 16px;
             font-weight: 400;
           }
-          .pwords{
+
+          .pwords {
             color: #acbacf;
           }
         }
+
         .vertical-line {
           border-left: 1px solid #e7eef6; /* Line width and color */
-          height: 70px; /* Line height */
+          height: 50px; /* Line height */
           margin: 0 5px; /* Optional spacing */
         }
       }
     }
-    @media screen and (max-width: 998px){
-        flex-direction: column;
-        width: 100%;
+
+    @media screen and (max-width: 998px) {
+      flex-direction: column;
+      width: 100%;
+
+      .card-body {
+        flex-direction: row;
+        align-items: stretch;
+
+        .vertical-line {
+          display: none;
+        }
+
+        .sections {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      .arrows {
+        display: none;
+      }
     }
   }
 }
+
+
+.popularHead {
+  .dhead{
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    h5{
+      color: #90a3bf;
+    }
+    p{
+      color:#3563e9;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+  }
+}
+
+.PopularCar {
+  margin-top: 10px;
+    .card-tags {
+      display: flex;
+      justify-content: space-between;
+      // flex-wrap: wrap; /* Added this line for responsiveness */
+      .icard {
+        // flex: 1;
+        margin: 10px; /* Added margin for better spacing */
+        .card {
+          .card-body {
+            .first {
+              display: flex;
+              align-items: baseline;
+              justify-content: space-between;
+              .first-sect{
+                h3{
+                  color:#1a202c;
+                }
+                p{
+                  color: #90a3bf;
+                }
+              }
+            }
+            img {
+              width: 100%; /* Ensures the image takes full width */
+            }
+            .first-icons {
+              display: flex;
+              justify-content: space-between;
+              .icons {
+                display: flex;
+                align-items: baseline;
+                gap: 5px;
+              }
+            }
+            .price {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; /* Align items vertically */
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .card-tags{
+        flex-wrap: wrap; /* Added this line for responsiveness */
+        .icard{
+          flex-direction: column;
+          margin: 10px;
+          .card{
+            .card-body{
+              .first{
+                flex-direction: row;
+                margin-bottom: 10px;
+              }
+              .first-icons{
+                margin: 10px 0px;
+                .icons{
+                  align-items:baseline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

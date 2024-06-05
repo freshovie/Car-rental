@@ -6,8 +6,8 @@ function CarDisplay() {
   return (
     <div className="car-display">
       <div className="row">
-        <div class="col-sm-12 col-md-12 col-lg-1"></div>
-        <div class="col-sm-12 col-md-12 col-lg-10">
+        <div className="col-sm-12 col-md-12 col-lg-1"></div>
+        <div className="col-sm-12 col-md-12 col-lg-10">
           <div className="car-cards">
             <div className="car1d">
               <img src={Ad1} alt="" className="w-100" />
@@ -44,7 +44,7 @@ function CarDisplay() {
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-lg-1"></div>
+        <div className="col-sm-12 col-md-12 col-lg-1"></div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import Sidebar from './Sidebar/Sidebar';
 import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import Label from '../Label/Label';
-import { CarDisplay, OffUp, PopularCar } from './Pages';
+import { CarDisplay, OffUp, PopularCar, Headpage } from './Pages';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -19,6 +19,7 @@ const Display = () => {
                                 <Home />
                                 <CarDisplay />
                                 <OffUp />
+                                <Headpage />
                                 <PopularCar />
                             </Route>
                             <Route path="/sidebar">

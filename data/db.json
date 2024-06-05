@@ -1,0 +1,118 @@
+{
+    "cars": [
+        {
+            "Title" : "Koenigsegg",
+            "type" : "Sport",
+            "img" : "/src/assets/Koenigsegg.png",
+            "fuel": "90L",
+            "carType": "manual",
+            "carSpace": "2people",
+            "carPrice": 99.00
+        },
+        {
+            "Title" : "Nissan GT - R",
+            "type" : "Sport",
+            "img" : "/src/assets/Nissan GT-R.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "2people",
+            "carPrice": 80.00,
+            "isGold": 100.00
+        },
+        {
+            "Title" : "Rolls - Royce",
+            "type" : "Sedan",
+            "img" : "/src/assets/Rollsroyce.png",
+            "fuel": "70L",
+            "carType": "manual",
+            "carSpace": "4people",
+            "carPrice": 96.00
+        },
+        {
+            "Title" : "Nissan GT - R",
+            "type" : "Sport",
+            "img" : "/src/assets/Nissan GT-R.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "2people",
+            "carPrice": 80.00,
+            "isGold": 100.00
+        }
+    ],
+    "RecommendedCars": [
+        {
+            "Title" : "All New Rush",
+            "type" : "SUV",
+            "img" : "/src/assets/Allnewrush.png",
+            "fuel": "70L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 72.00,
+            "isGold": 80.00
+        },
+        {
+            "Title" : "CR - V",
+            "type" : "SUV",
+            "img" : "/src/assets/cr-v-brown.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 80.00
+        },
+        {
+            "Title" : "All New Terios",
+            "type" : "SUV",
+            "img" : "/src/assets/Allnew-terios.png",
+            "fuel": "70L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 72.00
+        },
+        {
+            "Title" : "CR - V",
+            "type" : "SUV",
+            "img" : "/src/assets/cr-v-black.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 80.00
+        },
+        {
+            "Title" : "MG ZX Exclusive",
+            "type" : "Hatchback",
+            "img" : "/src/assets/mgzx-exclusive.png",
+            "fuel": "70L",
+            "carType": "manual",
+            "carSpace": "4people",
+            "carPrice": 76.00,
+            "isGold": 80.00
+        },
+        {
+            "Title" : "New MG ZS",
+            "type" : "SUV",
+            "img" : "/src/assets/mg-white-zx.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 80.00
+        },
+        {
+            "Title" : "MG ZX Excite",
+            "type" : "Hatchback",
+            "img" : "/src/assets/mgzx-exclusive.png",
+            "fuel": "90L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 74.00
+        },
+        {
+            "Title" : "New MG ZS",
+            "type" : "SUV",
+            "img" : "/src/assets/mg-white-zx.png",
+            "fuel": "80L",
+            "carType": "manual",
+            "carSpace": "6people",
+            "carPrice": 80.00
+        }
+    ]
+}
