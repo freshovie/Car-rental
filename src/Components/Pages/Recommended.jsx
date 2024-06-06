@@ -4,13 +4,13 @@ import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome i
 import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
 import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
 
-const PopularCar = () => {
+const Recommended = () => {
   const [cars, setCars] = useState([]); // State to hold the list of cars
   const [liked, setLiked] = useState([]); // State to hold the liked status for each car
 
   // Fetch car data from the server on component mount
   useEffect(() => {
-    fetch("http://localhost:8000/cars")
+    fetch("http://localhost:8000/RecommendedCars")
       .then((res) => res.json()) // Parse the JSON response
       .then((data) => {
         setCars(data); // Set the fetched car data to the state
@@ -27,11 +27,12 @@ const PopularCar = () => {
   };
 
   return (
-    <div className="PopularCar">
+    <div className="recommend">
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
-          <div className="card-tags">
+        <h4 style={{ color: '#90a3bf'}}>Recommendation Car</h4>
+          <div className="card-tag">
             {cars.map((car, index) => (
               <div className="icard" key={car.id}>
                 <div className="card">
@@ -62,14 +63,14 @@ const PopularCar = () => {
                       </div>
                     </div>
                     <div className="price">
-                        <div className="price-info">
+                      <div className="price-info">
                         <p>
-                        <span>${car.price}/</span>day
-                      </p>
-                        </div>
+                          <span>${car.price}/</span>day
+                        </p>
+                      </div>
                       <button>Rent Now</button>
                     </div>
-                    {car.isGold && <s>${car.isGold}</s>} {/* Display the original price if available */}
+                        {car.isGold && <s>${car.isGold}</s>} {/* Display the original price if available */}
                   </div>
                 </div>
               </div>
@@ -82,4 +83,4 @@ const PopularCar = () => {
   );
 };
 
-export default PopularCar;
+export default Recommended;

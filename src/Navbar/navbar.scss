@@ -1,7 +1,9 @@
 .navbar {
-margin: 0;
+  margin: 0;
   padding: 10px;
-
+.container-fluid{
+  background-color: #fff;
+}
   .navbar-brand {
     font-weight: bold;
     color: #3563e9;
@@ -59,7 +61,7 @@ margin: 0;
       cursor: pointer;
     }
     .dropdown {
-        margin-right: 0px;
-      }
-}
+      margin-right: 0px;
+    }
+  }
 }

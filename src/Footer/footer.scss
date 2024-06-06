@@ -1,0 +1,41 @@
+.footer {
+  background: #fff;
+  .container {
+    h3 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #3563e9;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #717171;
+    }
+    h5 {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #1a202c;
+      margin-bottom: 1.5rem;
+    }
+    .footer-behave {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 1.5rem;
+       .text-edit {
+          color: #1a202c;
+          font-size: 1rem;
+          text-decoration: none;
+          &:hover {
+            color: #3563e9;
+          }
+        }
+      }
+    }
+  }
+}
+
+

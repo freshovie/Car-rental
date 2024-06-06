@@ -1,118 +1,131 @@
 {
     "cars": [
-        {
-            "Title" : "Koenigsegg",
-            "type" : "Sport",
-            "img" : "/src/assets/Koenigsegg.png",
-            "fuel": "90L",
-            "carType": "manual",
-            "carSpace": "2people",
-            "carPrice": 99.00
-        },
-        {
-            "Title" : "Nissan GT - R",
-            "type" : "Sport",
-            "img" : "/src/assets/Nissan GT-R.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "2people",
-            "carPrice": 80.00,
-            "isGold": 100.00
-        },
-        {
-            "Title" : "Rolls - Royce",
-            "type" : "Sedan",
-            "img" : "/src/assets/Rollsroyce.png",
-            "fuel": "70L",
-            "carType": "manual",
-            "carSpace": "4people",
-            "carPrice": 96.00
-        },
-        {
-            "Title" : "Nissan GT - R",
-            "type" : "Sport",
-            "img" : "/src/assets/Nissan GT-R.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "2people",
-            "carPrice": 80.00,
-            "isGold": 100.00
-        }
+      {
+        "name": "Koenigsegg",
+        "type": "Sport",
+        "image": "/images/Koenigsegg.png",
+        "fuelCapacity": "90L",
+        "transmission": "Manual",
+        "seatingCapacity": "2people",
+        "price": 99.0,
+        "id": 1
+      },
+      {
+        "name": "Nissan GT - R",
+        "type": "Sport",
+        "image": "/images/Nissan GT-R.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "2people",
+        "price": 80.0,
+        "isGold": 100.00,
+        "id": 2
+      },
+      {
+        "name": "Rolls - Royce",
+        "type": "Sedan",
+        "image": "/images/Rollsroyce.png",
+        "fuelCapacity": "70L",
+        "transmission": "Manual",
+        "seatingCapacity": "4people",
+        "price": 96.0,
+        "id": 3
+      },
+      {
+        "name": "Nissan GT - R",
+        "type": "Sport",
+        "image": "/images/Nissan GT-R.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "2people",
+        "price": 80.0,
+        "isGold": 100.00,
+        "id": 4
+      }
     ],
     "RecommendedCars": [
-        {
-            "Title" : "All New Rush",
-            "type" : "SUV",
-            "img" : "/src/assets/Allnewrush.png",
-            "fuel": "70L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 72.00,
-            "isGold": 80.00
-        },
-        {
-            "Title" : "CR - V",
-            "type" : "SUV",
-            "img" : "/src/assets/cr-v-brown.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 80.00
-        },
-        {
-            "Title" : "All New Terios",
-            "type" : "SUV",
-            "img" : "/src/assets/Allnew-terios.png",
-            "fuel": "70L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 72.00
-        },
-        {
-            "Title" : "CR - V",
-            "type" : "SUV",
-            "img" : "/src/assets/cr-v-black.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 80.00
-        },
-        {
-            "Title" : "MG ZX Exclusive",
-            "type" : "Hatchback",
-            "img" : "/src/assets/mgzx-exclusive.png",
-            "fuel": "70L",
-            "carType": "manual",
-            "carSpace": "4people",
-            "carPrice": 76.00,
-            "isGold": 80.00
-        },
-        {
-            "Title" : "New MG ZS",
-            "type" : "SUV",
-            "img" : "/src/assets/mg-white-zx.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 80.00
-        },
-        {
-            "Title" : "MG ZX Excite",
-            "type" : "Hatchback",
-            "img" : "/src/assets/mgzx-exclusive.png",
-            "fuel": "90L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 74.00
-        },
-        {
-            "Title" : "New MG ZS",
-            "type" : "SUV",
-            "img" : "/src/assets/mg-white-zx.png",
-            "fuel": "80L",
-            "carType": "manual",
-            "carSpace": "6people",
-            "carPrice": 80.00
-        }
+      {
+        "name": "All New Rush",
+        "type": "SUV",
+        "image": "/images/Allnewrush.png",
+        "fuelCapacity": "70L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 72.0,
+        "isGold": 80.00,
+        "id": 1
+      },
+      {
+        "name": "CR - V",
+        "type": "SUV",
+        "image": "/images/cr-v-brown.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 80.0,
+        "id": 2
+      },
+      {
+        "name": "All New Terios",
+        "type": "SUV",
+        "image": "/images/Allnew-terios.png",
+        "fuelCapacity": "70L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 72.0,
+        "id": 3
+      },
+      {
+        "name": "CR - V",
+        "type": "SUV",
+        "image": "/images/cr-v-black.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 80.0,
+        "id": 4
+      },
+      {
+        "name": "MG ZX Exclusive",
+        "type": "Hatchback",
+        "image": "/images/mgzx-exclusive.png",
+        "fuelCapacity": "70L",
+        "transmission": "Manual",
+        "seatingCapacity": "4people",
+        "price": 76.0,
+        "isGold": 80.00,
+        "id": 5
+      },
+      {
+        "name": "New MG ZS",
+        "type": "SUV",
+        "image": "/images/mg-white-zx.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 80.0,
+        "id": 6
+      },
+      {
+        "name": "MG ZX Excite",
+        "type": "Hatchback",
+        "image": "/images/mgzx-exclusive.png",
+        "fuelCapacity": "90L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 74.0,
+        "id": 7
+      },
+      {
+        "name": "New MG ZS",
+        "type": "SUV",
+        "image": "/images/mg-white-zx.png",
+        "fuelCapacity": "80L",
+        "transmission": "Manual",
+        "seatingCapacity": "6people",
+        "price": 80.0,
+        "id": 8
+      }
     ]
-}
+  }
+  
