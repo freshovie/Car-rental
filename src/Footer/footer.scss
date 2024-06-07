@@ -35,6 +35,31 @@
         }
       }
     }
+    .last{
+      display: flex;
+      justify-content: space-between;
+      .footer-bask{
+        gap: 10px;
+        display: flex;
+        a{
+        text-decoration: none;
+        color: #1a202c;
+        &:hover {
+          color: #3563e9;
+        }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .last{
+        flex-direction: column;
+        // text-align: center;
+        // justify-content: center;
+        .footer-bask{
+          flex-direction: column;
+        }
+      }
+    }
   }
 }
 

@@ -207,7 +207,7 @@
       flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
       margin: 10px; /* Added margin for better spacing */
       .card {
-        height: 380px;
+        height: 435px;
         .card-body {
           .first {
             margin-top: 10px;
@@ -292,6 +292,24 @@
       }
     }
   }
+  @media screen and (min-width: 435px) and (max-width: 1024px)  {
+    .card-tags {
+      .icard{
+        .card{
+          height: 560px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 435px)  {
+    .card-tags {
+      .icard{
+        .card{
+          height: 435px;
+        }
+      }
+    }
+  }
 }
 
 .recommend {
@@ -306,7 +324,7 @@
       flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
       margin: 10px; /* Added margin for better spacing */
       .card {
-        height: 420px;
+        height: 435px;
         .card-body {
           .first {
             margin-top: 10px;
@@ -389,6 +407,24 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+    @media screen and (max-width: 435px)  {
+    .card-tags {
+      .icard{
+        .card{
+          height: 435px;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 435px) and (max-width: 1024px)  {
+    .card-tag {
+      .icard{
+        .card{
+          height: 560px;
         }
       }
     }
