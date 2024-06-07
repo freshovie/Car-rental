@@ -292,8 +292,10 @@
       }
     }
   }
-  @media screen and (min-width: 435px) and (max-width: 1024px)  {
+  @media screen and (min-width: 768px) and (max-width: 1024px)  {
     .card-tags {
+    grid-template-columns: repeat(2, 1fr);
+display: grid;
       .icard{
         .card{
           height: 560px;
@@ -420,8 +422,10 @@
       }
     }
   }
-  @media screen and (min-width: 435px) and (max-width: 1024px)  {
+  @media screen and (min-width: 768px) and (max-width: 1024px)  {
     .card-tag {
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
       .icard{
         .card{
           height: 560px;

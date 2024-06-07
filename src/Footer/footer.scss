@@ -38,8 +38,14 @@
     .last{
       display: flex;
       justify-content: space-between;
+      border-top: 1px solid #dad8d8;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      p{
+        color: #1a202c;
+      }
       .footer-bask{
-        gap: 10px;
+        gap: 20px;
         display: flex;
         a{
         text-decoration: none;
@@ -53,8 +59,7 @@
     @media screen and (max-width: 768px) {
       .last{
         flex-direction: column;
-        // text-align: center;
-        // justify-content: center;
+        border: none;
         .footer-bask{
           flex-direction: column;
         }

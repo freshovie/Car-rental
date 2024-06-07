@@ -14,6 +14,8 @@ export const CRVBrown = require('./cr-v-brown.png');
 export const MGWhite = require('./mg-white-zx.png');
 export const MGZXExclusive = require('./mgzx-exclusive.png');
 export const RollRoyce = require('./Rollsroyce.png');
+export const Main404 = require('./c04501cb8d2604770051ba4268f83a92.jpg');
+export const Main4041 = require('./a0f35387e8bf2bcc6aacf3df7c9f053f.jpg');
 
 
 
