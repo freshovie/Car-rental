@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Label from '../Label/Label';
 import Footer from '../Footer/Footer';
-import Sidebar from '../Components/Sidebar/Sidebar';
 import {
   CarDisplay,
   OffUp,
@@ -11,18 +10,19 @@ import {
   Headpage,
   Recommended,
   ShowMore,
+  Sidebar,
+  Content
 } from './Pages';
-import { Main4041 } from '../assets';
+import { Main4042 } from '../assets';
 
 const Display = () => {
   const notFoundStyles = {
     textAlign: 'center',
-    margin: '100px 0',
+    margin: '20px 0',
   };
 
   const imgStyles = {
     maxWidth: '100%',
-    height: 'auto',
     width: '100%'
   };
 
@@ -59,11 +59,12 @@ const Display = () => {
             </Route>
             <Route path="/sidebar">
               <Sidebar />
-              <PopularCar />
+              <Content />
+              <ShowMore />
             </Route>
             <Route path="*">
               <div style={notFoundStyles}>
-                <img src={Main4041} alt="404" style={imgStyles} />
+                <img src={Main4042} alt="404" style={imgStyles} />
                 <Link to="/">
                   <button
                     type="button"

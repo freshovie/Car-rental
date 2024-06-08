@@ -1,8 +1,8 @@
 {
     "cars": [
       {
-        "name": "Koenigsegg",
-        "type": "Sport",
+        "carName": "Koenigsegg",
+        "carType": "Sport",
         "image": "/images/Koenigsegg.png",
         "fuelCapacity": "90L",
         "transmission": "Manual",
@@ -11,8 +11,8 @@
         "id": 1
       },
       {
-        "name": "Nissan GT - R",
-        "type": "Sport",
+        "carName": "Nissan GT - R",
+        "carType": "Sport",
         "image": "/images/Nissan GT-R.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",
@@ -22,8 +22,8 @@
         "id": 2
       },
       {
-        "name": "Rolls - Royce",
-        "type": "Sedan",
+        "carName": "Rolls - Royce",
+        "carType": "Sedan",
         "image": "/images/Rollsroyce.png",
         "fuelCapacity": "70L",
         "transmission": "Manual",
@@ -32,8 +32,8 @@
         "id": 3
       },
       {
-        "name": "Nissan GT - R",
-        "type": "Sport",
+        "carName": "Nissan GT - R",
+        "carType": "Sport",
         "image": "/images/Nissan GT-R.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",
@@ -45,8 +45,8 @@
     ],
     "RecommendedCars": [
       {
-        "name": "All New Rush",
-        "type": "SUV",
+        "carName": "All New Rush",
+        "carType": "SUV",
         "image": "/images/Allnewrush.png",
         "fuelCapacity": "70L",
         "transmission": "Manual",
@@ -56,8 +56,8 @@
         "id": 1
       },
       {
-        "name": "CR - V",
-        "type": "SUV",
+        "carName": "CR - V",
+        "carType": "SUV",
         "image": "/images/cr-v-brown.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",
@@ -66,8 +66,8 @@
         "id": 2
       },
       {
-        "name": "All New Terios",
-        "type": "SUV",
+        "carName": "All New Terios",
+        "carType": "SUV",
         "image": "/images/Allnew-terios.png",
         "fuelCapacity": "70L",
         "transmission": "Manual",
@@ -76,8 +76,8 @@
         "id": 3
       },
       {
-        "name": "CR - V",
-        "type": "SUV",
+        "carName": "CR - V",
+        "carType": "SUV",
         "image": "/images/cr-v-black.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",
@@ -86,8 +86,8 @@
         "id": 4
       },
       {
-        "name": "MG ZX Exclusive",
-        "type": "Hatchback",
+        "carName": "MG ZX Exclusive",
+        "carType": "Hatchback",
         "image": "/images/mgzx-exclusive.png",
         "fuelCapacity": "70L",
         "transmission": "Manual",
@@ -97,8 +97,8 @@
         "id": 5
       },
       {
-        "name": "New MG ZS",
-        "type": "SUV",
+        "carName": "New MG ZS",
+        "carType": "SUV",
         "image": "/images/mg-white-zx.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",
@@ -107,8 +107,8 @@
         "id": 6
       },
       {
-        "name": "MG ZX Excite",
-        "type": "Hatchback",
+        "carName": "MG ZX Excite",
+        "carType": "Hatchback",
         "image": "/images/mgzx-exclusive.png",
         "fuelCapacity": "90L",
         "transmission": "Manual",
@@ -117,8 +117,8 @@
         "id": 7
       },
       {
-        "name": "New MG ZS",
-        "type": "SUV",
+        "carName": "New MG ZS",
+        "carType": "SUV",
         "image": "/images/mg-white-zx.png",
         "fuelCapacity": "80L",
         "transmission": "Manual",

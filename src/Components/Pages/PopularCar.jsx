@@ -21,8 +21,9 @@ const PopularCar = () => {
 
   // Function to handle the like button click for each car
   const handleLikeClick = (index) => {
-    setLiked((prevLiked) =>
-      prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
+    setLiked(
+      (prevLiked) =>
+        prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
     );
   };
 
@@ -38,15 +39,16 @@ const PopularCar = () => {
                   <div className="card-body">
                     <div className="first">
                       <div className="first-sect">
-                        <h4>{car.name}</h4>
-                        <p>{car.type}</p>
+                        <h4>{car.carName}</h4>
+                        <p>{car.carType}</p>
                       </div>
                       <FaHeart
                         style={{ color: liked[index] ? "red" : "grey" }} // Change the color based on liked state
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <img src={car.image} alt={`${car.name} car`} /> {/* Display the car image */}
+                    <img src={car.image} alt={`${car.carName} car`} />{" "}
+                    {/* Display the car image */}
                     <div className="first-icons">
                       <div className="icons">
                         <FaGasPump />
@@ -62,14 +64,15 @@ const PopularCar = () => {
                       </div>
                     </div>
                     <div className="price">
-                        <div className="price-info">
+                      <div className="price-info">
                         <p>
-                        <span>${car.price}/</span>day
-                      </p>
-                        </div>
+                          <span>${car.price}/</span>day
+                        </p>
+                      </div>
                       <button>Rent Now</button>
                     </div>
-                    {car.isGold && <s>${car.isGold}</s>} {/* Display the original price if available */}
+                    {car.isGold && <s>${car.isGold}</s>}{" "}
+                    {/* Display the original price if available */}
                   </div>
                 </div>
               </div>

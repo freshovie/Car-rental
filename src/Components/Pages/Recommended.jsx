@@ -39,15 +39,15 @@ const Recommended = () => {
                   <div className="card-body">
                     <div className="first">
                       <div className="first-sect">
-                        <h4>{car.name}</h4>
-                        <p>{car.type}</p>
+                        <h4>{car.carName}</h4>
+                        <p>{car.carType}</p>
                       </div>
                       <FaHeart
                         style={{ color: liked[index] ? "red" : "grey" }} // Change the color based on liked state
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <img src={car.image} alt={`${car.name} car`} /> {/* Display the car image */}
+                    <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
                     <div className="first-icons">
                       <div className="icons">
                         <FaGasPump />

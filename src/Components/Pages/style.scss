@@ -60,6 +60,7 @@
     }
     h1 {
       font-size: 22px;
+      font-weight: 600;
     }
     p,
     button {
@@ -257,9 +258,9 @@
               border-radius: 5px;
               cursor: pointer;
             }
-            button:hover{
+            button:hover {
               background-color: #5074c2;
-              }
+            }
           }
           s {
             color: #90a3bf;
@@ -292,21 +293,21 @@
       }
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px)  {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     .card-tags {
-    grid-template-columns: repeat(2, 1fr);
-display: grid;
-      .icard{
-        .card{
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      .icard {
+        .card {
           height: 560px;
         }
       }
     }
   }
-  @media screen and (max-width: 435px)  {
+  @media screen and (max-width: 435px) {
     .card-tags {
-      .icard{
-        .card{
+      .icard {
+        .card {
           height: 435px;
         }
       }
@@ -376,9 +377,9 @@ display: grid;
               border-radius: 5px;
               cursor: pointer;
             }
-            button:hover{
+            button:hover {
               background-color: #5074c2;
-              }
+            }
           }
           s {
             color: #90a3bf;
@@ -413,21 +414,21 @@ display: grid;
       }
     }
   }
-    @media screen and (max-width: 435px)  {
+  @media screen and (max-width: 435px) {
     .card-tags {
-      .icard{
-        .card{
+      .icard {
+        .card {
           height: 435px;
         }
       }
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px)  {
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     .card-tag {
       grid-template-columns: repeat(2, 1fr);
       display: grid;
-      .icard{
-        .card{
+      .icard {
+        .card {
           height: 560px;
         }
       }
@@ -435,19 +436,207 @@ display: grid;
   }
 }
 
-.showmore{
+.showmore {
   margin-top: 20px;
   // display: flex;
   text-align: center;
-  .showmore-btn{
-  color: #fff;
-  background-color:#3563e9;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer; 
+  .showmore-btn {
+    color: #fff;
+    background-color: #3563e9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
   }
-  .showmore-btn:hover{
-  background-color: #5074c2;
+  .showmore-btn:hover {
+    background-color: #5074c2;
   }
 }
+
+.sidebar{
+  position: absolute;
+  top: 115px;
+  left: 0;
+  width: 300px;
+  height: 70vh;
+  z-index: 0;
+  background-color: #fff;
+  padding: 20px;
+  overflow: hidden;
+  .sidebar-first, .sidebar-second, .sidebar-third{
+    margin-bottom: 20px;
+    h5{
+      margin-bottom: 10px;
+      color: #90a3bf;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      div{
+        input {
+          margin-right: 10px;
+        }
+        label{
+          margin-right: 20px;
+          color: #596780;
+          span{
+            margin-left: 10px;
+            color: #90a3bf;
+          }
+        }
+      }
+    }
+    p{
+      margin-bottom: 10px;
+      color: #596780;
+    }
+  }
+  @media screen and (min-width: 701px) and (max-width: 1024px) {
+    width: 210px;
+  }
+  @media screen and (max-width: 700px) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    .sidebar-first, .sidebar-second, .sidebar-third {
+      margin-bottom: 20px;
+      float: left;
+    }
+  }
+  @media screen and (max-width: 430px) {
+    .sidebar-first, .sidebar-second, .sidebar-third {
+      text-align: left;
+      float: none;
+    }
+  }
+}
+
+.content{
+    margin-left: 100px;
+    padding: 1px 16px;
+    // height: 1000px;
+    .card-tags {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+  
+      .icard {
+        flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
+        margin: 10px; /* Added margin for better spacing */
+        .card {
+          height: 435px;
+          .card-body {
+            .first {
+              margin-top: 10px;
+              display: flex;
+              align-items: baseline;
+              justify-content: space-between;
+              .first-sect {
+                h4 {
+                  color: #1a202c;
+                }
+                p {
+                  color: #90a3bf;
+                }
+              }
+            }
+            img {
+              margin-top: 10px;
+              width: 100%; /* Ensures the image takes full width */
+            }
+            .first-icons {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 20px;
+              .icons {
+                display: flex;
+                align-items: baseline;
+                gap: 3px;
+                color: #90a3bf;
+              }
+            }
+            .price {
+              display: flex;
+              justify-content: space-between;
+              align-items: center; /* Align items vertically */
+              margin-top: 20px;
+              p {
+                color: #90a3bf;
+                span {
+                  color: #1a202c;
+                }
+              }
+              button {
+                color: #fff;
+                background-color: #3563e9;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+              button:hover {
+                background-color: #5074c2;
+              }
+            }
+            s {
+              color: #90a3bf;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .card-tags {
+        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap; /* Added for responsiveness */
+        .icard {
+          flex: 1 1 100%; /* Full width for small screens */
+          margin: 10px;
+          .card {
+            .card-body {
+              .first {
+                flex-direction: row;
+                margin-bottom: 10px;
+              }
+              .first-icons {
+                margin: 10px 0px;
+                .icons {
+                  align-items: baseline;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      .card-tags {
+        flex-direction: column;
+        flex-wrap: wrap;
+        display: flex;
+        .icard {
+          .card {
+            height: 560px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 435px) {
+      .card-tags {
+        .icard {
+          .card {
+            height: 435px;
+          }
+        }
+      }
+    }
+   @media screen and (max-width: 700px) {
+    margin-left: 0;
+   }
+  }
