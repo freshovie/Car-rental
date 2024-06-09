@@ -1,4 +1,5 @@
 .car-display {
+  margin-top: 20px;
   .rentbtn1,
   .rentbtn2 {
     color: white;
@@ -97,7 +98,7 @@
 }
 
 .offup {
-  margin-top: 10px;
+  margin-top: 20px;
 
   .picku {
     display: flex;
@@ -116,6 +117,33 @@
       background-color: #3563e9; /* Circle background color */
       color: white; /* Icon color */
       font-size: 24px; /* Icon size */
+      z-index: 1;
+      transition: box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+      &::before {
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 123, 255, 0.5),
+          transparent
+        );
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        z-index: -1;
+        content: "";
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5),
+          0 0 40px rgba(0, 123, 255, 0.5), 0 0 60px rgba(0, 123, 255, 0.5);
+      }
+
+      &:active {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5),
+          0 0 40px rgba(0, 123, 255, 0.5), 0 0 60px rgba(0, 123, 255, 0.5);
+      }
     }
 
     .card {
@@ -182,6 +210,7 @@
 }
 
 .popularHead {
+  margin-top: 20px;
   .dhead {
     align-items: baseline;
     display: flex;
@@ -199,11 +228,13 @@
 }
 
 .PopularCar {
-  margin-top: 10px;
-  .card-tags {
-    display: flex;
+  margin-top: 20px;
+  .card-tagss {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
     justify-content: space-between;
-
+    gap: 10px;
+    flex-wrap: wrap;
     .icard {
       flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
       margin: 10px; /* Added margin for better spacing */
@@ -271,12 +302,15 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .card-tags {
+    .card-tagss {
       flex-wrap: wrap; /* Added for responsiveness */
+      flex-direction: column;
+      display: flex;
       .icard {
         flex: 1 1 100%; /* Full width for small screens */
         margin: 10px;
         .card {
+          height: 460px;
           .card-body {
             .first {
               flex-direction: row;
@@ -293,19 +327,11 @@
       }
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .card-tags {
+  @media screen and (min-width: 768px) and (max-width: 1250px) {
+    .card-tagss {
       grid-template-columns: repeat(2, 1fr);
       display: grid;
-      .icard {
-        .card {
-          height: 560px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 435px) {
-    .card-tags {
+      flex-wrap: wrap;
       .icard {
         .card {
           height: 435px;
@@ -313,16 +339,25 @@
       }
     }
   }
+  @media screen and (max-width: 435px) {
+    .card-tagss {
+      .icard {
+        .card {
+          height: 455px;
+        }
+      }
+    }
+  }
 }
 
 .recommend {
-  margin-top: 10px;
+  margin-top: 20px;
   .card-tag {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     justify-content: space-between;
-
+    flex-wrap: wrap;
     .icard {
       flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
       margin: 10px; /* Added margin for better spacing */
@@ -398,6 +433,7 @@
         flex: 1 1 100%; /* Full width for small screens */
         margin: 10px;
         .card {
+          height: 550px;
           .card-body {
             .first {
               flex-direction: row;
@@ -415,21 +451,22 @@
     }
   }
   @media screen and (max-width: 435px) {
-    .card-tags {
+    .card-tag {
       .icard {
         .card {
-          height: 435px;
+          height: 455px;
         }
       }
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  @media screen and (min-width: 768px) and (max-width: 1250px) {
     .card-tag {
       grid-template-columns: repeat(2, 1fr);
       display: grid;
+      flex-wrap: wrap;
       .icard {
         .card {
-          height: 560px;
+          height: 455px;
         }
       }
     }
@@ -648,7 +685,7 @@
 }
 
 .offup2 {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 100px;
   padding: 1px 16px;
   .picku {
