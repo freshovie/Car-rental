@@ -453,7 +453,7 @@
   }
 }
 
-.sidebar{
+.sidebar {
   position: absolute;
   top: 115px;
   left: 0;
@@ -463,31 +463,33 @@
   background-color: #fff;
   padding: 20px;
   overflow: hidden;
-  .sidebar-first, .sidebar-second, .sidebar-third{
+  .sidebar-first,
+  .sidebar-second,
+  .sidebar-third {
     margin-bottom: 20px;
-    h5{
+    h5 {
       margin-bottom: 10px;
       color: #90a3bf;
     }
-    ul{
+    ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      div{
+      div {
         input {
           margin-right: 10px;
         }
-        label{
+        label {
           margin-right: 20px;
           color: #596780;
-          span{
+          span {
             margin-left: 10px;
             color: #90a3bf;
           }
         }
       }
     }
-    p{
+    p {
       margin-bottom: 10px;
       color: #596780;
     }
@@ -502,141 +504,258 @@
     width: 100%;
     height: auto;
     padding: 20px;
-    .sidebar-first, .sidebar-second, .sidebar-third {
+    .sidebar-first,
+    .sidebar-second,
+    .sidebar-third {
       margin-bottom: 20px;
       float: left;
     }
   }
   @media screen and (max-width: 430px) {
-    .sidebar-first, .sidebar-second, .sidebar-third {
+    .sidebar-first,
+    .sidebar-second,
+    .sidebar-third {
       text-align: left;
       float: none;
     }
   }
 }
 
-.content{
-    margin-left: 100px;
-    padding: 1px 16px;
-    // height: 1000px;
-    .card-tags {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      justify-content: space-between;
-  
-      .icard {
-        flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
-        margin: 10px; /* Added margin for better spacing */
-        .card {
-          height: 435px;
-          .card-body {
-            .first {
-              margin-top: 10px;
-              display: flex;
-              align-items: baseline;
-              justify-content: space-between;
-              .first-sect {
-                h4 {
-                  color: #1a202c;
-                }
-                p {
-                  color: #90a3bf;
-                }
+.content {
+  margin-left: 100px;
+  padding: 1px 16px;
+  // height: 1000px;
+  .card-tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    .icard {
+      flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
+      margin: 10px; /* Added margin for better spacing */
+      .card {
+        height: 435px;
+        .card-body {
+          .first {
+            margin-top: 10px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            .first-sect {
+              h4 {
+                color: #1a202c;
               }
-            }
-            img {
-              margin-top: 10px;
-              width: 100%; /* Ensures the image takes full width */
-            }
-            .first-icons {
-              display: flex;
-              justify-content: space-between;
-              margin-top: 20px;
-              .icons {
-                display: flex;
-                align-items: baseline;
-                gap: 3px;
-                color: #90a3bf;
-              }
-            }
-            .price {
-              display: flex;
-              justify-content: space-between;
-              align-items: center; /* Align items vertically */
-              margin-top: 20px;
               p {
                 color: #90a3bf;
-                span {
-                  color: #1a202c;
-                }
-              }
-              button {
-                color: #fff;
-                background-color: #3563e9;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-              }
-              button:hover {
-                background-color: #5074c2;
               }
             }
-            s {
+          }
+          img {
+            margin-top: 10px;
+            width: 100%; /* Ensures the image takes full width */
+          }
+          .first-icons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            .icons {
+              display: flex;
+              align-items: baseline;
+              gap: 3px;
               color: #90a3bf;
-              font-size: 12px;
             }
           }
-        }
-      }
-    }
-    @media screen and (max-width: 768px) {
-      .card-tags {
-        flex-direction: column;
-        display: flex;
-        flex-wrap: wrap; /* Added for responsiveness */
-        .icard {
-          flex: 1 1 100%; /* Full width for small screens */
-          margin: 10px;
-          .card {
-            .card-body {
-              .first {
-                flex-direction: row;
-                margin-bottom: 10px;
-              }
-              .first-icons {
-                margin: 10px 0px;
-                .icons {
-                  align-items: baseline;
-                }
+          .price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Align items vertically */
+            margin-top: 20px;
+            p {
+              color: #90a3bf;
+              span {
+                color: #1a202c;
               }
             }
+            button {
+              color: #fff;
+              background-color: #3563e9;
+              border: none;
+              padding: 10px 20px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            button:hover {
+              background-color: #5074c2;
+            }
+          }
+          s {
+            color: #90a3bf;
+            font-size: 12px;
           }
         }
       }
     }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .card-tags {
-        flex-direction: column;
-        flex-wrap: wrap;
-        display: flex;
-        .icard {
-          .card {
-            height: 560px;
-          }
-        }
-      }
-    }
-    @media screen and (max-width: 435px) {
-      .card-tags {
-        .icard {
-          .card {
-            height: 435px;
-          }
-        }
-      }
-    }
-   @media screen and (max-width: 700px) {
-    margin-left: 0;
-   }
   }
+  @media screen and (max-width: 768px) {
+    .card-tags {
+      flex-direction: column;
+      display: flex;
+      flex-wrap: wrap; /* Added for responsiveness */
+      .icard {
+        flex: 1 1 100%; /* Full width for small screens */
+        margin: 10px;
+        .card {
+          .card-body {
+            .first {
+              flex-direction: row;
+              margin-bottom: 10px;
+            }
+            .first-icons {
+              margin: 10px 0px;
+              .icons {
+                align-items: baseline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .card-tags {
+      flex-direction: column;
+      flex-wrap: wrap;
+      display: flex;
+      .icard {
+        .card {
+          height: 560px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 435px) {
+    .card-tags {
+      .icard {
+        .card {
+          height: 435px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 700px) {
+    margin-left: 0;
+  }
+}
+
+.offup2 {
+  margin-top: 10px;
+  margin-left: 100px;
+  padding: 1px 16px;
+  .picku {
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    align-items: center;
+    justify-content: space-between;
+
+    .arrows {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px; /* Adjust the size of the circle */
+      height: 50px;
+      border-radius: 50%; /* Circle shape */
+      background-color: #3563e9; /* Circle background color */
+      color: white; /* Icon color */
+      font-size: 24px; /* Icon size */
+      z-index: 1;
+      transition: box-shadow 0.3s ease-in-out;
+      cursor: pointer;
+      &::before {
+        background: radial-gradient(
+          circle at center,
+          rgba(0, 123, 255, 0.5),
+          transparent
+        );
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+        z-index: -1;
+        content: "";
+      }
+      &:hover:before {
+        opacity: 1;
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5),
+          0 0 40px rgba(0, 123, 255, 0.5), 0 0 60px rgba(0, 123, 255, 0.5);
+      }
+
+      &:active {
+        box-shadow: 0 0 20px rgba(0, 123, 255, 0.5),
+          0 0 40px rgba(0, 123, 255, 0.5), 0 0 60px rgba(0, 123, 255, 0.5);
+      }
+    }
+
+    .card {
+      flex: 1 1 100%;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+
+      .topradio {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .card-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+
+        .sections {
+          flex: 1;
+          min-width: 120px; /* Ensure a minimum width for sections */
+          p {
+            font-size: 16px;
+            font-weight: 400;
+          }
+
+          .pwords {
+            color: #acbacf;
+          }
+        }
+
+        .vertical-line {
+          border-left: 1px solid #e7eef6; /* Line width and color */
+          height: 50px; /* Line height */
+          margin: 0 5px; /* Optional spacing */
+        }
+      }
+    }
+
+    @media screen and (max-width: 998px) {
+      flex-direction: column;
+      width: 100%;
+
+      .card-body {
+        flex-direction: row;
+        align-items: stretch;
+
+        .vertical-line {
+          display: none;
+        }
+
+        .sections {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+
+      .arrows {
+        display: none;
+      }
+    }
+  }
+}

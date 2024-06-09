@@ -11,7 +11,8 @@ import {
   Recommended,
   ShowMore,
   Sidebar,
-  Content
+  Content, 
+  OffUp2
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -59,6 +60,7 @@ const Display = () => {
             </Route>
             <Route path="/sidebar">
               <Sidebar />
+              <OffUp2 />
               <Content />
               <ShowMore />
             </Route>
