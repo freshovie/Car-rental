@@ -9,6 +9,7 @@ import Content from "./Content";
 import CarDetails from "./CarDetails";
 import CarReviews from "./CarReviews";
 import OffUp2 from "./OffUp2";
+import Ddetails from "./Ddetails";
 
 
 export {
@@ -22,5 +23,6 @@ export {
   Content,
   CarDetails,
   CarReviews,
-  OffUp2
+  OffUp2,
+  Ddetails
 };

@@ -1,29 +1,53 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
-import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome icons
-import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
-import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
+import { FaHeart, FaGasPump } from "react-icons/fa6";
+import { TbWheel } from "react-icons/tb";
+import { MdPeopleAlt } from "react-icons/md";
 
 const Content = () => {
-  const [cars, setCars] = useState([]); // State to hold the list of cars
   const [liked, setLiked] = useState([]); // State to hold the liked status for each car
+  const [recommendedCars, setRecommendedCars] = useState([]);
+  const [popularCars, setPopularCars] = useState([]);
+  const [combinedCars, setCombinedCars] = useState([]);
 
-  // Fetch car data from the server on component mount
   useEffect(() => {
-    fetch("http://localhost:8000/RecommendedCars")
-      .then((res) => res.json()) // Parse the JSON response
-      .then((data) => {
-        setCars(data); // Set the fetched car data to the state
-        setLiked(Array(data.length).fill(false)); // Initialize the liked state with false values
-      })
-      .catch((error) => console.error("Error fetching data:", error)); // Handle any errors during the fetch
+    const fetchRecommendedCars = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/RecommendedCars");
+        const data = await response.json();
+        setRecommendedCars(data);
+      } catch (error) {
+        console.error("Error fetching recommended cars:", error);
+      }
+    };
+
+    const fetchPopularCars = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/cars");
+        const data = await response.json();
+        setPopularCars(data);
+      } catch (error) {
+        console.error("Error fetching popular cars:", error);
+      }
+    };
+
+    fetchRecommendedCars();
+    fetchPopularCars();
   }, []);
+
+  useEffect(() => {
+    // Combine the two datasets
+    if (recommendedCars.length > 0 && popularCars.length > 0) {
+      const combined = [...recommendedCars, ...popularCars];
+      setCombinedCars(combined);
+      setLiked(Array(combined.length).fill(false)); // Initialize the liked state
+    }
+  }, [recommendedCars, popularCars]);
 
   // Function to handle the like button click for each car
   const handleLikeClick = (index) => {
-    setLiked(
-      (prevLiked) =>
-        prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
+    setLiked((prevLiked) =>
+      prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
     );
   };
 
@@ -33,7 +57,7 @@ const Content = () => {
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
           <div className="card-tags">
-            {cars.map((car, index) => (
+            {combinedCars.map((car, index) => (
               <div className="icard" key={car.id}>
                 <div className="card">
                   <div className="card-body">

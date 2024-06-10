@@ -12,7 +12,8 @@ import {
   ShowMore,
   Sidebar,
   Content, 
-  OffUp2
+  OffUp2,
+  Ddetails
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -58,10 +59,15 @@ const Display = () => {
               <Recommended />
               <ShowMore />
             </Route>
-            <Route path="/sidebar">
+            <Route path="/category">
               <Sidebar />
               <OffUp2 />
               <Content />
+              <ShowMore />
+            </Route>
+            <Route path="/cardetails">
+              <Sidebar />
+              <Ddetails />
               <ShowMore />
             </Route>
             <Route path="*">
