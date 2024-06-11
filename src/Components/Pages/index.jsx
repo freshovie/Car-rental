@@ -12,6 +12,7 @@ import OffUp2 from "./OffUp2";
 import Ddetails from "./Ddetails";
 import RecentCar from "./RecentCar";
 import Recommend from "./Recommend";
+import Payment from "./Payment";
 
 export {
   CarDisplay,
@@ -27,5 +28,6 @@ export {
   OffUp2,
   Ddetails, 
   RecentCar, 
-  Recommend
+  Recommend,
+  Payment
 };

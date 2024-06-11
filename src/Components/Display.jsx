@@ -75,6 +75,9 @@ const Display = () => {
               <RecentCar />
               <Recommend />
             </Route>
+            <Route path="/payment">
+              
+            </Route>
             <Route path="*">
               <div style={notFoundStyles}>
                 <img src={Main4042} alt="404" style={imgStyles} />
