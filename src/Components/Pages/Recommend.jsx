@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
-import "./style.scss";
-import { FaHeart, FaGasPump } from "react-icons/fa6";
-import { TbWheel } from "react-icons/tb";
-import { MdPeopleAlt } from "react-icons/md";
+import "./style.scss"; // Importing the SCSS stylesheet for styling
+import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome icons
+import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
+import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
+import Headpage from "./Headpage";
 
-const Content = () => {
+const Recommend = () => {
+  const [cars, setCars] = useState([]); // State to hold the list of cars
   const [liked, setLiked] = useState([]); // State to hold the liked status for each car
   const [recommendedCars, setRecommendedCars] = useState([]);
-  const [Cars, setCars] = useState([]);
   const [combinedCars, setCombinedCars] = useState([]);
 
+  // Function to shuffle an array
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
+  // Fetch car data from the server on component mount
   useEffect(() => {
     const fetchRecommendedCars = async () => {
       try {
@@ -37,12 +48,12 @@ const Content = () => {
 
   useEffect(() => {
     // Combine the two datasets
-    if (recommendedCars.length > 0 && Cars.length > 0) {
-      const combined = [...recommendedCars, ...Cars];
+    if (recommendedCars.length > 0 && cars.length > 0) {
+      const combined = shuffleArray([...recommendedCars, ...cars]).slice(0, 3);
       setCombinedCars(combined);
       setLiked(Array(combined.length).fill(false)); // Initialize the liked state
     }
-  }, [recommendedCars, Cars]);
+  }, [recommendedCars, cars]);
 
   // Function to handle the like button click for each car
   const handleLikeClick = (index) => {
@@ -53,11 +64,13 @@ const Content = () => {
   };
 
   return (
-    <div className="content">
+    <div className="recentCar">
+      <Headpage heading="Recommended Cars" />{" "}
+      {/* Use Headpage component with custom heading */}
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
-          <div className="card-tags">
+          <div className="card-tagss">
             {combinedCars.map((car, index) => (
               <div className="icard" key={car.id}>
                 <div className="card">
@@ -110,4 +123,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default Recommend;

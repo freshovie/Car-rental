@@ -13,7 +13,10 @@ import {
   Sidebar,
   Content, 
   OffUp2,
-  Ddetails
+  Ddetails,
+  CarReviews,
+  RecentCar,
+  Recommend
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -68,7 +71,9 @@ const Display = () => {
             <Route path="/cardetails">
               <Sidebar />
               <Ddetails />
-              <ShowMore />
+              <CarReviews />
+              <RecentCar />
+              <Recommend />
             </Route>
             <Route path="*">
               <div style={notFoundStyles}>

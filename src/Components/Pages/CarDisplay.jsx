@@ -39,7 +39,7 @@ function CarDisplay() {
                 <button className="rentbtn2">Rental Car</button>
               </div>
               <div className="fastcar">
-                <img src={Nissan} alt="" className="w-100"/>
+                <img src={Nissan} alt="" className="w-100" />
               </div>
             </div>
           </div>

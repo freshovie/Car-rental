@@ -3,6 +3,7 @@ import "./style.scss"; // Importing the SCSS stylesheet for styling
 import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome icons
 import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
 import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
+import Headpage from "./Headpage";
 
 const Recommended = () => {
   const [cars, setCars] = useState([]); // State to hold the list of cars
@@ -21,17 +22,20 @@ const Recommended = () => {
 
   // Function to handle the like button click for each car
   const handleLikeClick = (index) => {
-    setLiked((prevLiked) =>
-      prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
+    setLiked(
+      (prevLiked) =>
+        prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
     );
   };
 
   return (
     <div className="recommend">
+      <Headpage heading="Recommended Cars" />{" "}
+      {/* Use Headpage component with custom heading */}
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
-        <h4 style={{ color: '#90a3bf'}}>Recommendation Car</h4>
+          <h4 style={{ color: "#90a3bf" }}>Recommendation Car</h4>
           <div className="card-tag">
             {cars.map((car, index) => (
               <div className="icard" key={car.id}>
@@ -47,7 +51,8 @@ const Recommended = () => {
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
+                    <img src={car.image} alt={`${car.carName} car`} />{" "}
+                    {/* Display the car image */}
                     <div className="first-icons">
                       <div className="icons">
                         <FaGasPump />
@@ -70,7 +75,8 @@ const Recommended = () => {
                       </div>
                       <button>Rent Now</button>
                     </div>
-                        {car.isGold && <s>${car.isGold}</s>} {/* Display the original price if available */}
+                    {car.isGold && <s>${car.isGold}</s>}{" "}
+                    {/* Display the original price if available */}
                   </div>
                 </div>
               </div>

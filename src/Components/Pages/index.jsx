@@ -10,7 +10,8 @@ import CarDetails from "./CarDetails";
 import CarReviews from "./CarReviews";
 import OffUp2 from "./OffUp2";
 import Ddetails from "./Ddetails";
-
+import RecentCar from "./RecentCar";
+import Recommend from "./Recommend";
 
 export {
   CarDisplay,
@@ -24,5 +25,7 @@ export {
   CarDetails,
   CarReviews,
   OffUp2,
-  Ddetails
+  Ddetails, 
+  RecentCar, 
+  Recommend
 };

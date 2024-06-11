@@ -3,6 +3,7 @@ import "./style.scss"; // Importing the SCSS stylesheet for styling
 import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome icons
 import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
 import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
+import Headpage from "./Headpage";
 
 const PopularCar = () => {
   const [cars, setCars] = useState([]); // State to hold the list of cars
@@ -29,6 +30,8 @@ const PopularCar = () => {
 
   return (
     <div className="PopularCar">
+      <Headpage heading="Popular Cars" />{" "}
+      {/* Use Headpage component with custom heading */}
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">

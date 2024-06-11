@@ -21,6 +21,7 @@ export const View = require('./View 1.png');
 export const View2 = require('./View 2.png');
 export const View3 = require('./View 3.png');
 export const BigView = require('./image 8.png');
+export const Profile2 = require('./Profill.png');
 
 
 
