@@ -16,7 +16,9 @@ import {
   Ddetails,
   CarReviews,
   RecentCar,
-  Recommend
+  Recommend,
+  Payment,
+  Offup3
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -76,7 +78,8 @@ const Display = () => {
               <Recommend />
             </Route>
             <Route path="/payment">
-              
+              <Payment />
+              <Offup3 />
             </Route>
             <Route path="*">
               <div style={notFoundStyles}>

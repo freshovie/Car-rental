@@ -13,6 +13,7 @@ import Ddetails from "./Ddetails";
 import RecentCar from "./RecentCar";
 import Recommend from "./Recommend";
 import Payment from "./Payment";
+import Offup3 from "./Offup3";
 
 export {
   CarDisplay,
@@ -29,5 +30,6 @@ export {
   Ddetails, 
   RecentCar, 
   Recommend,
-  Payment
+  Payment,
+  Offup3
 };

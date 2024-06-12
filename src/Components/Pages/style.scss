@@ -1223,3 +1223,86 @@
     margin-left: 0;
   }
 }
+
+.payment{
+  margin-right: 600px;
+  margin-top: 10px;
+  .card{
+    border: none;
+    .card-body{
+      .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        p{
+          color: #90a3bf;
+        }
+        h4{
+          color: #1a202c;
+        }
+      }
+      .dforms{
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    justify-content: space-between;
+
+    form{
+      flex-direction: column;
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-between;
+      label{
+        font-weight: 600;
+      }
+      input{
+        margin: 5px 20px;
+        padding: 12px 20px;
+        border: 1px solid #90a3bf;
+        border-radius: 10px;
+      }
+      ::placeholder {
+        color: #90a3bf;
+      }
+    }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    .card{
+      .card-body{
+        .header{
+          flex-direction: column-reverse;
+          display: flex;
+        }
+        .dforms{
+          flex-direction: column;
+          display: flex;
+          form{
+            flex-direction: column;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1240px) {
+    margin-right: 0;
+    .card{
+      .card-body{
+        .header{
+          flex-direction: column-reverse;
+          display: flex;
+        }
+        .dforms{
+          flex-direction: column;
+          display: flex;
+          form{
+            flex-direction: column;
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}
