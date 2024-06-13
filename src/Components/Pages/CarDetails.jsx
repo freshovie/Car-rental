@@ -2,15 +2,16 @@ import React, { useEffect, useState } from "react";
 import "./style.scss";
 import { FaHeart } from "react-icons/fa";
 import StarRating from "./StarRating";
-import { BigView, View, View2, View3 } from "../../assets";
+import { View, View2, View3 } from "../../assets";
 
 const CarDetails = ({ carId }) => {
   const [recommendedCars, setRecommendedCars] = useState([]);
   const [popularCars, setPopularCars] = useState([]);
   const [combinedCars, setCombinedCars] = useState([]);
   const [liked, setLiked] = useState({});
-  const [currentImages, setCurrentImages] = useState({});
+  const [background, setBackground] = useState(View); // Initial background image
 
+  // Fetch recommended cars from the server
   useEffect(() => {
     const fetchRecommendedCars = async () => {
       try {
@@ -22,6 +23,7 @@ const CarDetails = ({ carId }) => {
       }
     };
 
+    // Fetch popular cars from the server
     const fetchPopularCars = async () => {
       try {
         const response = await fetch("http://localhost:8000/cars");
@@ -36,6 +38,7 @@ const CarDetails = ({ carId }) => {
     fetchPopularCars();
   }, []);
 
+  // Combine recommended and popular cars
   useEffect(() => {
     if (recommendedCars.length > 0 || popularCars.length > 0) {
       const combined = [...recommendedCars, ...popularCars];
@@ -43,6 +46,7 @@ const CarDetails = ({ carId }) => {
     }
   }, [recommendedCars, popularCars]);
 
+  // Handle like button click
   const handleLikeClick = (id) => {
     setLiked((prevLiked) => ({
       ...prevLiked,
@@ -50,21 +54,25 @@ const CarDetails = ({ carId }) => {
     }));
   };
 
-  const handleImageClick = (carId, image) => {
-    setCurrentImages((prevImages) => ({
-      ...prevImages,
-      [carId]: image,
-    }));
+  // Handle background image change
+  const handleImageClick = (newPicture) => {
+    setBackground(newPicture);
   };
 
+  // Find the car details based on carId
   const car = combinedCars.find((car) => car.id === carId);
 
+  // Show loading message if car details are not available
   if (!car) {
     return <div>Loading...</div>;
   }
 
-  const images = car.images || [BigView, View, View2, View3];
-  const currentImage = currentImages[car.id] || images[0];
+  // List of car images
+  const pictures = [
+    { id: 0, name: View },
+    { id: 1, name: View2 },
+    { id: 2, name: View3 },
+  ];
 
   return (
     <div className="cardetails">
@@ -75,7 +83,13 @@ const CarDetails = ({ carId }) => {
             <div className="cata-image">
               <div
                 className="theimg"
-                style={{ backgroundImage: `url(${currentImage})` }}
+                style={{
+                  width: "100%",
+                  height: "400px",
+                  backgroundImage: `url(${background})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
                 <h5>
                   Sports car with the best <br /> design and acceleration
@@ -86,12 +100,12 @@ const CarDetails = ({ carId }) => {
                 </p>
               </div>
               <div className="changed-image">
-                {images.slice(1).map((image, index) => (
+                {pictures.map((item) => (
                   <img
-                    key={index}
-                    src={image}
-                    alt={`View ${index + 1}`}
-                    onClick={() => handleImageClick(car.id, image)}
+                    key={item.id}
+                    src={item.name}
+                    alt="pictures"
+                    onClick={() => handleImageClick(item.name)}
                     style={{ cursor: "pointer" }}
                   />
                 ))}

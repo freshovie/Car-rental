@@ -831,12 +831,12 @@
         }
 
         h5 {
-          top: 20px;
+          top: 40px;
           left: 20px;
         }
 
         p {
-          bottom: 20px;
+          top: 120px;
           left: 20px;
         }
       }
@@ -851,6 +851,12 @@
           width: 25%;
           cursor: pointer;
           border-radius: 10px;
+          transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+        }
+        img:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          border: 5px solid #007bff;
         }
       }
     }
@@ -1224,61 +1230,61 @@
   }
 }
 
-.payment{
+.payment {
   margin-right: 600px;
   margin-top: 10px;
-  .card{
+  .card {
     border: none;
-    .card-body{
-      .header{
+    .card-body {
+      .header {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        p{
+        p {
           color: #90a3bf;
         }
-        h4{
+        h4 {
           color: #1a202c;
         }
       }
-      .dforms{
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    justify-content: space-between;
+      .dforms {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        justify-content: space-between;
 
-    form{
-      flex-direction: column;
-      display: flex;
-      margin-top: 10px;
-      justify-content: space-between;
-      label{
-        font-weight: 600;
-      }
-      input{
-        margin: 5px 20px;
-        padding: 12px 20px;
-        border: 1px solid #90a3bf;
-        border-radius: 10px;
-      }
-      ::placeholder {
-        color: #90a3bf;
-      }
-    }
+        form {
+          flex-direction: column;
+          display: flex;
+          margin-top: 10px;
+          justify-content: space-between;
+          label {
+            font-weight: 600;
+          }
+          input {
+            margin: 5px 20px;
+            padding: 12px 20px;
+            border: 1px solid #90a3bf;
+            border-radius: 10px;
+          }
+          ::placeholder {
+            color: #90a3bf;
+          }
+        }
       }
     }
   }
   @media screen and (max-width: 768px) {
     margin-right: 0;
-    .card{
-      .card-body{
-        .header{
+    .card {
+      .card-body {
+        .header {
           flex-direction: column-reverse;
           display: flex;
         }
-        .dforms{
+        .dforms {
           flex-direction: column;
           display: flex;
-          form{
+          form {
             flex-direction: column;
             display: flex;
           }
@@ -1288,21 +1294,94 @@
   }
   @media screen and (min-width: 769px) and (max-width: 1240px) {
     margin-right: 0;
-    .card{
-      .card-body{
-        .header{
+    .card {
+      .card-body {
+        .header {
           flex-direction: column-reverse;
           display: flex;
         }
-        .dforms{
+        .dforms {
           flex-direction: column;
           display: flex;
-          form{
+          form {
             flex-direction: column;
             display: flex;
           }
         }
       }
+    }
+  }
+}
+
+.offup3 {
+  padding: 20px;
+
+  .picku {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+
+      .topradio {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        h5 {
+          font-size: 1.2rem;
+          margin: 0;
+        }
+
+        input[type="radio"] {
+          accent-color: #007bff;
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        .sections {
+          flex: 1;
+
+          p {
+            margin: 0;
+
+            &.pwords {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-weight: bold;
+              color: #007bff;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .vertical-line {
+          width: 1px;
+          height: 50px;
+          background-color: #e0e0e0;
+        }
+      }
+    }
+
+    .picku-card {
+      background-color: #f9f9f9;
+    }
+
+    .dropoff-card {
+      background-color: #fff;
     }
   }
 }

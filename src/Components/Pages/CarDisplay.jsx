@@ -6,14 +6,22 @@ function CarDisplay() {
   return (
     <div className="car-display">
       <div className="row">
+        {/* Empty column for spacing on the left side */}
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
+        
+        {/* Main content column */}
         <div className="col-sm-12 col-md-12 col-lg-10">
           <div className="car-cards">
+            
+            {/* First car display card */}
             <div className="car1d">
-              <img src={Ad1} alt="" className="w-100" />
+              {/* Background image for the first card */}
+              <img src={Ad1} alt="Ad1" className="w-100" />
+              
+              {/* Inner content of the first card */}
               <div className="innercar">
                 <h1>
-                  The Best Platfrom
+                  The Best Platform
                   <br /> for Car Rental
                 </h1>
                 <p>
@@ -22,12 +30,19 @@ function CarDisplay() {
                 </p>
                 <button className="rentbtn1">Rental Car</button>
               </div>
+              
+              {/* Foreground car image */}
               <div className="fastcar">
-                <img src={Koenigsegg} alt="" className="w-100" />
+                <img src={Koenigsegg} alt="Koenigsegg" className="w-100" />
               </div>
             </div>
+            
+            {/* Second car display card */}
             <div className="car1d">
-              <img src={Ad2} alt="" className="w-100" />
+              {/* Background image for the second card */}
+              <img src={Ad2} alt="Ad2" className="w-100" />
+              
+              {/* Inner content of the second card */}
               <div className="innercar">
                 <h1>
                   Easy way to rent a <br /> car at a low price
@@ -38,12 +53,17 @@ function CarDisplay() {
                 </p>
                 <button className="rentbtn2">Rental Car</button>
               </div>
+              
+              {/* Foreground car image */}
               <div className="fastcar">
-                <img src={Nissan} alt="" className="w-100" />
+                <img src={Nissan} alt="Nissan" className="w-100" />
               </div>
             </div>
+            
           </div>
         </div>
+        
+        {/* Empty column for spacing on the right side */}
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
       </div>
     </div>
