@@ -7,7 +7,6 @@ import {
   CarDisplay,
   OffUp,
   PopularCar,
-  Headpage,
   Recommended,
   ShowMore,
   Sidebar,
@@ -59,7 +58,6 @@ const Display = () => {
             <Route exact path="/">
               <CarDisplay />
               <OffUp />
-              <Headpage />
               <PopularCar />
               <Recommended />
               <ShowMore />

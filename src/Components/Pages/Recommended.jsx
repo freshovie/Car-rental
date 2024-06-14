@@ -35,7 +35,6 @@ const Recommended = () => {
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
-          <h4 style={{ color: "#90a3bf" }}>Recommendation Car</h4>
           <div className="card-tag">
             {cars.map((car, index) => (
               <div className="icard" key={car.id}>
