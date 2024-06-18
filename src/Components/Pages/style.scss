@@ -1326,6 +1326,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      background-color: #fff;
 
       .topradio {
         display: flex;
@@ -1356,12 +1357,12 @@
 
           p {
             margin: 0;
+            font-weight: bold;
 
             &.pwords {
               display: flex;
               align-items: center;
               gap: 5px;
-              font-weight: bold;
               color: #007bff;
               cursor: pointer;
             }
@@ -1378,10 +1379,6 @@
 
     .picku-card {
       background-color: #f9f9f9;
-    }
-
-    .dropoff-card {
-      background-color: #fff;
     }
   }
 }

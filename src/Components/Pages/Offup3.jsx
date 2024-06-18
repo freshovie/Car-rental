@@ -66,7 +66,7 @@ const Offup3 = () => {
                 </div>
               </div>
             </div>
-            <div className="card dropoff-card">
+            <div className="card">
               <div className="topradio">
                 <input
                   type="radio"
@@ -83,6 +83,7 @@ const Offup3 = () => {
                   <Dropdown
                     label="Location"
                     options={[
+                      { value: "all", label: "All" },
                       { value: "city1", label: "City 1" },
                       { value: "city2", label: "City 2" },
                       { value: "city3", label: "City 3" },

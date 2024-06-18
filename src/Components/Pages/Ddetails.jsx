@@ -3,7 +3,7 @@ import CarDetails from "./CarDetails";
 
 const Ddetails = () => {
     // Set the carId to be passed to the CarDetails component
-    const carId = 1;
+    const carId = 2;
 
     return (
         <div>
