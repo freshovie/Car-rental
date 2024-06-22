@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
-import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing icons from react-icons
+import { FaHeart, FaGasPump } from "react-icons/fa"; // Importing icons from react-icons
 import { TbWheel } from "react-icons/tb"; // Importing icons from react-icons
 import { MdPeopleAlt } from "react-icons/md"; // Importing icons from react-icons
 
@@ -57,6 +57,15 @@ const Content = () => {
     );
   };
 
+  // Component to render the link for car details
+  const ItemLink = ({ item, children }) => {
+    return (
+      <a href={`cardetails?id=${item.id}`}>
+        {children}
+      </a>
+    );
+  };
+
   return (
     <div className="content">
       <div className="row">
@@ -81,7 +90,9 @@ const Content = () => {
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
+                    <ItemLink item={car}>
+                      <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
+                    </ItemLink>
                     <div className="first-icons">
                       <div className="icons">
                         <FaGasPump />

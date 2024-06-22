@@ -63,6 +63,15 @@ const Recommend = () => {
     );
   };
 
+    // Component to render the link for car details
+    const ItemLink = ({ item, children }) => {
+      return (
+        <a href={`cardetails?id=${item.id}`}>
+          {children}
+        </a>
+      );
+    };
+
   return (
     <div className="recentCar">
       <Headpage heading="Recommended Cars" />{" "}
@@ -85,7 +94,9 @@ const Recommend = () => {
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <img src={car.image} alt={`${car.carName} car`} />{" "}
+                    <ItemLink item={car}>
+                      <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
+                    </ItemLink>
                     {/* Display the car image */}
                     <div className="first-icons">
                       <div className="icons">
