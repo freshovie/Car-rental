@@ -17,7 +17,10 @@ import {
   RecentCar,
   Recommend,
   Payment,
-  Offup3
+  Offup3,
+  PMethod,
+  Sidebar2,
+  Confirmational
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -76,8 +79,11 @@ const Display = () => {
               <Recommend />
             </Route>
             <Route path="/payment">
+              <Sidebar2 />
               <Payment />
               <Offup3 />
+              <PMethod />
+              <Confirmational />
             </Route>
             <Route path="*">
               <div style={notFoundStyles}>

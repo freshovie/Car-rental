@@ -1,4 +1,6 @@
 import React from 'react'
+import "./style.scss";
+import { Bitcoin, MasterCard, PayPal, Visa } from "../../assets";
 
 const PMethod = () => {
   return (
@@ -17,7 +19,17 @@ const PMethod = () => {
                 </div>
                 <div className="card">
                     <div className="card-body">
-                        <form action="payment">
+                        <div className="credit">
+                            <div className="labelfirst">
+                                <input type="radio" name="Credit Card" id="cc" />
+                                <p>Credit Card</p>
+                            </div>
+                            <div className="imgc">
+                            <img src={ MasterCard } alt="" />
+                            <img src={ Visa } alt="" />
+                            </div>
+                        </div>
+                        <form action="payment" className='payments'>
                             <div className="form-group">
                                 <label for="cardnumber">Card Number:</label>
                                 <input type="text" className="form-control" id="cardnumber" placeholder="Enter Card Number" />
@@ -36,6 +48,30 @@ const PMethod = () => {
                             </div>
                         </form>
                     </div>
+                </div>
+                <div className="pmethod-session">
+                <div className="card">
+                    <div className="card-body">
+                        <div className="formgroup">
+                            <input type="radio" className='form-control' id="paypal" name='paypal'  />
+                            <p>PayPal</p>
+                        </div>
+                        <div className="formimg">
+                            <img src={ PayPal } alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body">
+                        <div className="formgroup">
+                            <input type="radio" className='form-control' id="bitcoin" name='bitcoin'  />
+                            <p>Bitcoin</p>
+                        </div>
+                        <div className="formimg">
+                            <img src={ Bitcoin } alt="" />
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

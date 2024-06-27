@@ -16,6 +16,9 @@ import RecentCar from "./RecentCar"; // Component for displaying recently viewed
 import Recommend from "./Recommend"; // Component for recommending items (purpose not specified)
 import Payment from "./Payment"; // Component for handling payment (purpose not specified)
 import Offup3 from "./Offup3"; // Offup3 component (purpose not specified)
+import PMethod from "./PMethod";
+import Sidebar2 from "./Sidebar2";
+import Confirmational from "./Confirmational";
 
 // Exporting all components for use in other parts of the application
 export {
@@ -34,5 +37,8 @@ export {
   RecentCar,
   Recommend,
   Payment,
-  Offup3
+  Offup3,
+  PMethod,
+  Sidebar2,
+  Confirmational
 };
