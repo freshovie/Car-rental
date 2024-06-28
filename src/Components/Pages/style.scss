@@ -1406,17 +1406,65 @@
 }
 
 .confirmation{
+  margin-bottom: 10px;
 .confirmation-content{
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: #acbacf;
+    margin-bottom: 10px;
+    .pheader{
+      h3{
+        color: #1a202c;
+      }
+    }
+  }
+  .card {
+    border: none;
+    .card-body {
+      .first-div, .second-div{
+        display: flex;
+        gap: 20px;
+        align-items: baseline;
+        padding: 5px 10px;
+        background-color: #f6f7f6;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        input{
+          margin: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
   button{
     margin-top: 20px;
     padding: 10px 10px;
+    margin: 10px;
     width: 15%;
+    color: white;
+    background-color: #3563e9;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #2a4e9c;
   }
   img{
     width: 40px;
     height: 40px;
+    margin-bottom: 10px;
+  }
+  h4, p {
+    margin: 0;
   }
 }
 }

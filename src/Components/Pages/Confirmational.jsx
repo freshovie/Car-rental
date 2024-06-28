@@ -20,11 +20,11 @@ const Confirmation = () => {
                 <div className="card">
                     <div className="card-body">
                         <div className="first-div">
-                            <input type="checkbox" className='form-control' id='marketing' />
+                            <input type="checkbox" className='tick' id='marketing' />
                             <p>I agree with sending an Marketing and newsletter emails. No spam, promissed!</p>
                         </div>
                         <div className="second-div">
-                            <input type="checkbox" className='form-control' id='marketing' />
+                            <input type="checkbox" className='tick' id='marketing' />
                             <p>I agree with our terms and conditions and privacy policy.</p>
                         </div>
                     </div>
