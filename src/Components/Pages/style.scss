@@ -1233,41 +1233,36 @@
 .payment {
   margin-right: 600px;
   margin-top: 10px;
-  .card {
-    border: none;
-    .card-body {
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        p {
-          color: #90a3bf;
-        }
-        h4 {
-          color: #1a202c;
-        }
-      }
-      .dforms {
-        grid-template-columns: repeat(2, 1fr);
-        display: grid;
-        justify-content: space-between;
-
-        form {
-          flex-direction: column;
-          display: flex;
-          margin-top: 10px;
+  .container{
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    .card {
+      border: none;
+      .card-body {
+        .dforms {
+          grid-template-columns: repeat(2, 1fr);
+          display: grid;
           justify-content: space-between;
-          label {
-            font-weight: 600;
-          }
-          input {
-            margin: 5px 20px;
-            padding: 12px 20px;
-            border: 1px solid #90a3bf;
-            border-radius: 10px;
-          }
-          ::placeholder {
-            color: #90a3bf;
+  
+          form {
+            flex-direction: column;
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            label {
+              font-weight: 600;
+            }
+            input {
+              margin: 5px 20px;
+              padding: 12px 20px;
+              border: 1px solid #90a3bf;
+              border-radius: 10px;
+              background-color: #f6f7f6;
+            }
+            ::placeholder {
+              color: #90a3bf;
+            }
           }
         }
       }
@@ -1275,18 +1270,16 @@
   }
   @media screen and (max-width: 768px) {
     margin-right: 0;
-    .card {
-      .card-body {
-        .header {
-          flex-direction: column-reverse;
-          display: flex;
-        }
-        .dforms {
-          flex-direction: column;
-          display: flex;
-          form {
+    .container{
+      .card {
+        .card-body {
+          .dforms {
             flex-direction: column;
             display: flex;
+            form {
+              flex-direction: column;
+              display: flex;
+            }
           }
         }
       }
@@ -1294,28 +1287,12 @@
   }
   @media screen and (min-width: 769px) and (max-width: 1240px) {
     margin-right: 0;
-    .card {
-      .card-body {
-        .header {
-          flex-direction: column-reverse;
-          display: flex;
-        }
-        .dforms {
-          flex-direction: column;
-          display: flex;
-          form {
-            flex-direction: column;
-            display: flex;
-          }
-        }
-      }
-    }
   }
 }
 
 .offup3 {
   padding: 20px;
-
+  margin-right: 600px;
   .picku {
     display: flex;
     flex-direction: column;
@@ -1383,90 +1360,180 @@
   }
 }
 
-.pmethod{
-  .container{
-    .heading{
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      .pheader{
-        font-size: 20px;
-      }
-    }
-    .card{
-      .card-body{
-        .payments{
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          justify-content: space-between;
-        }
-      }
-    }
-  }
-}
-
-.confirmation{
-  margin-bottom: 10px;
-.confirmation-content{
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 10px;
-  .heading{
+.HeadStart{
+  .heading {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: baseline;
     color: #acbacf;
     margin-bottom: 10px;
-    .pheader{
-      h3{
+    .pheader {
+      h3 {
         color: #1a202c;
-      }
+      } 
     }
   }
-  .card {
-    border: none;
-    .card-body {
-      .first-div, .second-div{
-        display: flex;
-        gap: 20px;
-        align-items: baseline;
-        padding: 5px 10px;
-        background-color: #f6f7f6;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        input{
-          margin: 10px;
-          cursor: pointer;
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+}
+
+.pmethod {
+  margin-right: 600px;
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    .card {
+      background-color: #f6f7f6;
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      .card-body {
+        .credit {
+          display: flex;
+          justify-content: space-between;
+          .labelfirst {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+          }
+          .imgc {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+          }
+        }
+        .payments {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          justify-content: space-between;
+          .form-group {
+            label {
+              font-size: 18px;
+              font-weight: 500;
+              color: #1a202c;
+            }
+            input {
+              background-color: #fff;
+            }
+            ::placeholder {
+              color: #90a3bf;
+            }
+          }
+        }
+      }
+    }
+    .pmethod-session {
+      .card {
+        margin-top: 10px;
+        .card-body {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 5px 10px;
+          .formgroup {
+            display: flex;
+            gap: 10px;
+            align-items: stretch;
+            .control-form {
+              width: 20px;
+              height: 20px;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
   }
-  button{
-    margin-top: 20px;
-    padding: 10px 10px;
-    margin: 10px;
-    width: 15%;
-    color: white;
-    background-color: #3563e9;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  @media screen and (max-width: 768px) {
+    .container {
+      .card {
+        .card-body {
+          .payments {
+            flex-direction: column;
+            display: flex;
+          }
+        }
+      }
+    }
   }
-  button:hover {
-    background-color: #2a4e9c;
+  @media screen and (min-width: 769px) and (max-width: 1240px) {
+    margin-right: 0;
   }
-  img{
-    width: 40px;
-    height: 40px;
+}
+
+.confirmation {
+  margin-right: 600px;
+  margin-bottom: 10px;
+  .confirmation-content {
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    .card {
+      border: none;
+      .card-body {
+        .first-div,
+        .second-div {
+          display: flex;
+          gap: 20px;
+          align-items: baseline;
+          padding: 5px 10px;
+          background-color: #f6f7f6;
+          border-radius: 10px;
+          margin-bottom: 10px;
+          input {
+            margin: 10px;
+            cursor: pointer;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 10px;
+      margin: 10px;
+      width: 15%;
+      color: white;
+      background-color: #3563e9;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2a4e9c;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+    h4,
+    p {
+      margin: 0;
+    }
   }
-  h4, p {
-    margin: 0;
+  @media screen and (max-width: 768px) {
+    .confirmation-content{
+      button{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+      img, h4, p{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1240px) {
+    
   }
 }
-}
-
-

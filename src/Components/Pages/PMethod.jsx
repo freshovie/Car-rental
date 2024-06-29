@@ -25,8 +25,8 @@ const PMethod = () => {
                                 <p>Credit Card</p>
                             </div>
                             <div className="imgc">
-                            <img src={ MasterCard } alt="" />
                             <img src={ Visa } alt="" />
+                            <img src={ MasterCard } alt="" />
                             </div>
                         </div>
                         <form action="payment" className='payments'>
@@ -53,7 +53,7 @@ const PMethod = () => {
                 <div className="card">
                     <div className="card-body">
                         <div className="formgroup">
-                            <input type="radio" className='form-control' id="paypal" name='paypal'  />
+                            <input type="radio" className='control-form' id="paypal" name='paymentMethod'  />
                             <p>PayPal</p>
                         </div>
                         <div className="formimg">
@@ -64,7 +64,7 @@ const PMethod = () => {
                 <div className="card">
                     <div className="card-body">
                         <div className="formgroup">
-                            <input type="radio" className='form-control' id="bitcoin" name='bitcoin'  />
+                            <input type="radio" className='control-form' id="bitcoin" name='paymentMethod'  />
                             <p>Bitcoin</p>
                         </div>
                         <div className="formimg">

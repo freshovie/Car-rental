@@ -64,7 +64,7 @@ const CarDetails = ({ carId }) => {
 
   // Show loading message if car details are not available
   if (!car) {
-    return <div>Loading...</div>;
+    return <div>Please wait...</div>;
   }
 
   // List of car images

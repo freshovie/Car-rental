@@ -20,7 +20,7 @@ import {
   Offup3,
   PMethod,
   Sidebar2,
-  Confirmational
+  Confirmational,
 } from './Pages';
 import { Main4042 } from '../assets';
 

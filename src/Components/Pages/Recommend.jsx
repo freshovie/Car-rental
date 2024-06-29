@@ -63,14 +63,10 @@ const Recommend = () => {
     );
   };
 
-    // Component to render the link for car details
-    const ItemLink = ({ item, children }) => {
-      return (
-        <a href={`cardetails?id=${item.id}`}>
-          {children}
-        </a>
-      );
-    };
+  // Component to render the link for car details
+  const ItemLink = ({ item, children }) => {
+    return <a href={`cardetails?id=${item.id}`}>{children}</a>;
+  };
 
   return (
     <div className="recentCar">
@@ -95,7 +91,8 @@ const Recommend = () => {
                       />
                     </div>
                     <ItemLink item={car}>
-                      <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
+                      <img src={car.image} alt={`${car.carName} car`} />{" "}
+                      {/* Display the car image */}
                     </ItemLink>
                     {/* Display the car image */}
                     <div className="first-icons">
