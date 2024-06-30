@@ -1232,7 +1232,7 @@
 
 .payment {
   margin-right: 600px;
-  margin-top: 10px;
+  margin-bottom: 10px;
   .container{
     padding: 10px 20px;
     background-color: #fff;
@@ -1287,76 +1287,6 @@
   }
   @media screen and (min-width: 769px) and (max-width: 1240px) {
     margin-right: 0;
-  }
-}
-
-.offup3 {
-  padding: 20px;
-  margin-right: 600px;
-  .picku {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .card {
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      background-color: #fff;
-
-      .topradio {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-
-        h5 {
-          font-size: 1.2rem;
-          margin: 0;
-        }
-
-        input[type="radio"] {
-          accent-color: #007bff;
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      .card-body {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-
-        .sections {
-          flex: 1;
-
-          p {
-            margin: 0;
-            font-weight: bold;
-
-            &.pwords {
-              display: flex;
-              align-items: center;
-              gap: 5px;
-              color: #007bff;
-              cursor: pointer;
-            }
-          }
-        }
-
-        .vertical-line {
-          width: 1px;
-          height: 50px;
-          background-color: #e0e0e0;
-        }
-      }
-    }
-
-    .picku-card {
-      background-color: #f9f9f9;
-    }
   }
 }
 

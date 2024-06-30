@@ -17,10 +17,10 @@ import {
   RecentCar,
   Recommend,
   Payment,
-  Offup3,
   PMethod,
   Sidebar2,
   Confirmational,
+  Rentalnfo,
 } from './Pages';
 import { Main4042 } from '../assets';
 
@@ -81,7 +81,7 @@ const Display = () => {
             <Route path="/payment">
               <Sidebar2 />
               <Payment />
-              <Offup3 />
+              <Rentalnfo />
               <PMethod />
               <Confirmational />
             </Route>
