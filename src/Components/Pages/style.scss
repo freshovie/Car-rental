@@ -1467,3 +1467,27 @@
     
   }
 }
+
+
+.rentalinfo{
+  .container{
+    .card{
+      .card-body{
+        .radioItem{
+          margin-bottom: 10px;
+        }
+        .rentaldetails{
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          grid-gap: 10px;
+          .form-group{
+            margin-bottom: 0;
+            label{
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

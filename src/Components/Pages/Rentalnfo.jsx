@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import HeadStart from "./HeadStart";
 
-const Rentalnfo = () => {
-  const [cities, setCities] = useState("");
+const RentalInfo = () => {
+  const [cities, setCities] = useState([]);
   const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -20,8 +21,6 @@ const Rentalnfo = () => {
 
     fetchCities();
   }, []);
-
-  const [date, setDate] = useState("");
 
   const handleDateChange = (e) => {
     setDate(e.target.value);
@@ -83,8 +82,48 @@ const Rentalnfo = () => {
                       />
                     </div>
                   </div>
+
+                  <div className="radioItem">
+                    <input type="radio" name="selectDelivery" />
+                    <label>Drop - Off</label>
+                  </div>
+                  <div className="rentaldetails">
+                    <div className="form-group">
+                      <label htmlFor="locs">Locations</label>
+                      <select name="locations" id="locs">
+                        {cities.map((city, index) => (
+                          <option key={index} value={city.city}>
+                            {city.city}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="rentalDate">Date</label>
+                      <input
+                        type="date"
+                        className="form-control"
+                        id="rentalDate"
+                        value={date}
+                        onChange={handleDateChange}
+                        placeholder="Select your date"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="rentalTime">Time</label>
+                      <input
+                        type="time"
+                        className="form-control"
+                        id="rentalTime"
+                        value={time}
+                        onChange={handleTimeChange}
+                        placeholder="Select your time"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
@@ -94,4 +133,4 @@ const Rentalnfo = () => {
   );
 };
 
-export default Rentalnfo;
+export default RentalInfo;
