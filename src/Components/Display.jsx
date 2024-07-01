@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
-import Label from '../Label/Label';
-import Footer from '../Footer/Footer';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Label from "../Label/Label";
+import Footer from "../Footer/Footer";
 import {
   CarDisplay,
   OffUp,
@@ -10,7 +10,7 @@ import {
   Recommended,
   ShowMore,
   Sidebar,
-  Content, 
+  Content,
   OffUp2,
   Ddetails,
   CarReviews,
@@ -21,34 +21,34 @@ import {
   Sidebar2,
   Confirmational,
   Rentalnfo,
-} from './Pages';
-import { Main4042 } from '../assets';
+} from "./Pages";
+import { Main4042 } from "../assets";
 
 const Display = () => {
   const notFoundStyles = {
-    textAlign: 'center',
-    margin: '20px 0',
+    textAlign: "center",
+    margin: "20px 0",
   };
 
   const imgStyles = {
-    maxWidth: '100%',
-    width: '100%'
+    maxWidth: "100%",
+    width: "100%",
   };
 
   const buttonStyles = {
-    marginTop: '20px',
-    padding: '10px 20px',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    border: 'none',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    fontSize: '1rem',
-    borderRadius: '5px',
+    marginTop: "20px",
+    padding: "10px 20px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    cursor: "pointer",
+    textDecoration: "none",
+    fontSize: "1rem",
+    borderRadius: "5px",
   };
 
   const buttonHoverStyles = {
-    backgroundColor: '#0056b3',
+    backgroundColor: "#0056b3",
   };
 
   return (
@@ -93,10 +93,12 @@ const Display = () => {
                     type="button"
                     style={buttonStyles}
                     onMouseOver={(e) => {
-                      e.target.style.backgroundColor = buttonHoverStyles.backgroundColor;
+                      e.target.style.backgroundColor =
+                        buttonHoverStyles.backgroundColor;
                     }}
                     onMouseOut={(e) => {
-                      e.target.style.backgroundColor = buttonStyles.backgroundColor;
+                      e.target.style.backgroundColor =
+                        buttonStyles.backgroundColor;
                     }}
                   >
                     Return to Home

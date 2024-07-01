@@ -1381,6 +1381,7 @@
     }
   }
   @media screen and (max-width: 768px) {
+    margin-right: 0;
     .container {
       .card {
         .card-body {
@@ -1452,6 +1453,7 @@
     }
   }
   @media screen and (max-width: 768px) {
+    margin-right: 0;
     .confirmation-content {
       button {
         width: 100%;
@@ -1459,13 +1461,17 @@
         margin-bottom: 10px;
       }
       img,
-      h4,
-      p {
+      h4 {
         margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      p {
+        width: 18rem;
       }
     }
   }
   @media screen and (min-width: 769px) and (max-width: 1240px) {
+    margin-right: 0;
   }
 }
 
@@ -1478,7 +1484,7 @@
     flex-direction: column;
     border-radius: 10px;
     background-color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
 
     .card {
       border: none;
@@ -1490,7 +1496,7 @@
 
         .rentaldetails {
           display: grid;
-          grid-template-columns: 2fr 1fr;
+          grid-template-columns: repeat(2, 1fr);
           grid-gap: 10px;
 
           .form-group {
@@ -1509,6 +1515,61 @@
               background-color: #f6f7f6;
               border: none;
             }
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    .container {
+      .card {
+        .card-body {
+          .rentaldetails {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 769px) and (max-width: 1240px) {
+    margin-right: 0;
+  }
+}
+
+.sidebar2{
+  position: absolute;
+  top: 110px;
+  right: 200px;
+  width: 400px;
+  height: 70vh;
+  z-index: 0;
+  background-color: #fff;
+  padding: 30px 1px;
+  overflow: hidden;
+  .container{
+    span{
+      color: #9eaec7;
+    }
+    .itemsdetails{
+      .item{
+        display: flex;
+        justify-content: space-between;
+        div{
+          border: 1px solid blue;
+          padding: 10px;
+          img{
+            width: 100px;
+            height: 100px;
+          }
+        }
+        .iteminfo{
+          border: none;
+          .itemrating{
+            display: flex;
+            justify-content: space-between;
+            
           }
         }
       }

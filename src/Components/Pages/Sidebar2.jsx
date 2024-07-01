@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import StarRating from './StarRating';
+import React, { useEffect, useState } from "react";
+import StarRating from "./StarRating";
+import "./style.scss";
 
 const Sidebar2 = () => {
   const [recommendedCars, setRecommendedCars] = useState([]);
@@ -35,13 +36,18 @@ const Sidebar2 = () => {
   useEffect(() => {
     // Combine the two datasets
     if (recommendedCars.length > 0 && popularCars.length > 0) {
-      const combined = shuffleArray([...recommendedCars, ...popularCars]).slice(0, 3);
+      const combined = shuffleArray([...recommendedCars, ...popularCars]).slice(
+        0,
+        1
+      );
       setCombinedCars(combined);
     }
   }, [recommendedCars, popularCars]);
 
   const shuffleArray = (array) => {
-    let currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
 
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -60,41 +66,67 @@ const Sidebar2 = () => {
 
   return (
     <div className="sidebar2">
-      <div className="container">
-        <h3>Rental Summary</h3>
-        <p>Prices may change depending on the length of the rental and the price of your rental car.</p>
-        <div className="itemsdetails">
-          {combinedCars.map((car, index) => (
-            <div className="item" key={car.id}>
-              <img src={car.image} alt={car.name} />
-              <div className="iteminfo">
-                <h2>{car.name}</h2>
-                <div className="itemrating">
-                  <StarRating rating={car.rating} />
-                  <p>440+ Reviewers</p>
+      <div className="row">
+        <div className="col-sm-12 col-md-12 col-lg-12">
+          <div className="container">
+            <h3>Rental Summary</h3>
+            <p>
+              {" "}
+              <span>
+                Prices may change depending on the length of the rental and the
+                price of your rental car
+              </span>
+            </p>
+            <div className="itemsdetails">
+              {combinedCars.map((car, index) => (
+                <div className="item" key={car.id}>
+                  <div>
+                    <img src={car.image} alt={car.name} />
+                  </div>
+                  <div className="iteminfo">
+                    <h2>{car.carName}</h2>
+                    <div className="itemrating">
+                      <StarRating rating={car.rating} className="starating" />
+                      <p>440+ Reviewers</p>
+                    </div>
+                  </div>
+                  <hr />
                 </div>
+              ))}
+              <div className="itemfunds">
+                <p>Subtotal</p>
+                <p>
+                  {combinedCars.reduce((total, car) => total + car.price, 0)}
+                </p>
               </div>
-              <hr />
+              <div className="itemfunds">
+                <p>Tax</p>
+                <p>
+                  {(
+                    combinedCars.reduce((total, car) => total + car.price, 0) *
+                    0.1
+                  ).toFixed(2)}
+                </p>
+              </div>
+              <div>
+                <p>Apply promo code</p>
+                <p>
+                  <span>Apply now</span>
+                </p>
+              </div>
+              <div className="itemsprice">
+                <div className="total">
+                  <h3>Total Rental Price</h3>
+                  <p>Overall price and includes rental discount</p>
+                </div>
+                <h1>
+                  {(
+                    combinedCars.reduce((total, car) => total + car.price, 0) *
+                    1.1
+                  ).toFixed(2)}
+                </h1>
+              </div>
             </div>
-          ))}
-          <div className="itemfunds">
-            <p>Subtotal</p>
-            <p>{combinedCars.reduce((total, car) => total + car.price, 0)}</p>
-          </div>
-          <div className="itemfunds">
-            <p>Tax</p>
-            <p>{(combinedCars.reduce((total, car) => total + car.price, 0) * 0.1).toFixed(2)}</p>
-          </div>
-          <div>
-            <p>Apply promo code</p>
-            <p><span>Apply now</span></p>
-          </div>
-          <div className="itemsprice">
-            <div className="total">
-              <h3>Total Rental Price</h3>
-              <p>Overall price and includes rental discount</p>
-            </div>
-            <h1>{(combinedCars.reduce((total, car) => total + car.price, 0) * 1.1).toFixed(2)}</h1>
           </div>
         </div>
       </div>

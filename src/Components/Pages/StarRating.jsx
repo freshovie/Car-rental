@@ -23,7 +23,7 @@ const StarRating = ({ totalStars = 5 }) => {
             <FaStar
               className="star" // Class for styling the star icon
               color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9'} // Color based on hover or current rating
-              size={24} // Size of the star icon
+              size={18} // Size of the star icon
               onMouseEnter={() => setHover(ratingValue)} // Set hover state on mouse enter
               onMouseLeave={() => setHover(null)} // Clear hover state on mouse leave
             />
