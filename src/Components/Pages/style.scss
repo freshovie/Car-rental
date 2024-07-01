@@ -1233,7 +1233,7 @@
 .payment {
   margin-right: 600px;
   margin-bottom: 10px;
-  .container{
+  .container {
     padding: 10px 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -1244,7 +1244,7 @@
           grid-template-columns: repeat(2, 1fr);
           display: grid;
           justify-content: space-between;
-  
+
           form {
             flex-direction: column;
             display: flex;
@@ -1270,7 +1270,7 @@
   }
   @media screen and (max-width: 768px) {
     margin-right: 0;
-    .container{
+    .container {
       .card {
         .card-body {
           .dforms {
@@ -1290,7 +1290,7 @@
   }
 }
 
-.HeadStart{
+.HeadStart {
   .heading {
     display: flex;
     justify-content: space-between;
@@ -1300,7 +1300,7 @@
     .pheader {
       h3 {
         color: #1a202c;
-      } 
+      }
     }
   }
   @media screen and (max-width: 768px) {
@@ -1452,38 +1452,62 @@
     }
   }
   @media screen and (max-width: 768px) {
-    .confirmation-content{
-      button{
+    .confirmation-content {
+      button {
         width: 100%;
         margin: 0;
         margin-bottom: 10px;
       }
-      img, h4, p{
+      img,
+      h4,
+      p {
         margin-bottom: 10px;
       }
     }
   }
   @media screen and (min-width: 769px) and (max-width: 1240px) {
-    
   }
 }
 
+.rentalinfo {
+  margin-right: 600px;
+  margin-bottom: 10px;
 
-.rentalinfo{
-  .container{
-    .card{
-      .card-body{
-        .radioItem{
-          margin-bottom: 10px;
+  .container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+
+    .card {
+      border: none;
+
+      .card-body {
+        .radioItem {
+          margin: 10px 0;
         }
-        .rentaldetails{
+
+        .rentaldetails {
           display: grid;
           grid-template-columns: 2fr 1fr;
           grid-gap: 10px;
-          .form-group{
+
+          .form-group {
             margin-bottom: 0;
-            label{
+            display: flex;
+            flex-direction: column;
+
+            label {
               font-size: 12px;
+            }
+
+            select,
+            input {
+              padding: 10px;
+              width: 20rem;
+              background-color: #f6f7f6;
+              border: none;
             }
           }
         }

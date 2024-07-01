@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import HeadStart from "./HeadStart";
+import "./style.scss";
 
 const RentalInfo = () => {
   const [cities, setCities] = useState([]);
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState("");
+  const [pickUpDate, setPickUpDate] = useState("");
+  const [pickUpTime, setPickUpTime] = useState("");
+  const [dropOffDate, setDropOffDate] = useState("");
+  const [dropOffTime, setDropOffTime] = useState("");
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -22,12 +25,20 @@ const RentalInfo = () => {
     fetchCities();
   }, []);
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
+  const handlePickUpDateChange = (e) => {
+    setPickUpDate(e.target.value);
   };
 
-  const handleTimeChange = (e) => {
-    setTime(e.target.value);
+  const handlePickUpTimeChange = (e) => {
+    setPickUpTime(e.target.value);
+  };
+
+  const handleDropOffDateChange = (e) => {
+    setDropOffDate(e.target.value);
+  };
+
+  const handleDropOffTimeChange = (e) => {
+    setDropOffTime(e.target.value);
   };
 
   return (
@@ -45,85 +56,84 @@ const RentalInfo = () => {
               <div className="card">
                 <div className="card-body">
                   <div className="radioItem">
-                    <input type="radio" name="selectDelivery" />
-                    <label>Pick - Up</label>
+                    <input type="radio" name="selectDelivery" id="pickUp" />
+                    <label htmlFor="pickUp">Pick - Up</label>
                   </div>
                   <div className="rentaldetails">
                     <div className="form-group">
-                      <label htmlFor="locs">Locations</label>
-                      <select name="locations" id="locs">
-                        {cities.map((city, index) => (
-                          <option key={index} value={city.city}>
+                      <label htmlFor="pickUpLocs">Locations</label>
+                      <select name="locations" id="pickUpLocs">
+                        {cities.map((city) => (
+                          <option key={city.city} value={city.city}>
                             {city.city}
                           </option>
                         ))}
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rentalDate">Date</label>
+                      <label htmlFor="pickUpDate">Date</label>
                       <input
                         type="date"
                         className="form-control"
-                        id="rentalDate"
-                        value={date}
-                        onChange={handleDateChange}
+                        id="pickUpDate"
+                        value={pickUpDate}
+                        onChange={handlePickUpDateChange}
                         placeholder="Select your date"
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rentalTime">Time</label>
+                      <label htmlFor="pickUpTime">Time</label>
                       <input
                         type="time"
                         className="form-control"
-                        id="rentalTime"
-                        value={time}
-                        onChange={handleTimeChange}
+                        id="pickUpTime"
+                        value={pickUpTime}
+                        onChange={handlePickUpTimeChange}
                         placeholder="Select your time"
                       />
                     </div>
                   </div>
 
                   <div className="radioItem">
-                    <input type="radio" name="selectDelivery" />
-                    <label>Drop - Off</label>
+                    <input type="radio" name="selectDelivery" id="dropOff" />
+                    <label htmlFor="dropOff">Drop - Off</label>
                   </div>
                   <div className="rentaldetails">
                     <div className="form-group">
-                      <label htmlFor="locs">Locations</label>
-                      <select name="locations" id="locs">
-                        {cities.map((city, index) => (
-                          <option key={index} value={city.city}>
+                      <label htmlFor="dropOffLocs">Locations</label>
+                      <select name="locations" id="dropOffLocs">
+                        {cities.map((city) => (
+                          <option key={city.city} value={city.city}>
                             {city.city}
                           </option>
                         ))}
                       </select>
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rentalDate">Date</label>
+                      <label htmlFor="dropOffDate">Date</label>
                       <input
                         type="date"
                         className="form-control"
-                        id="rentalDate"
-                        value={date}
-                        onChange={handleDateChange}
+                        id="dropOffDate"
+                        value={dropOffDate}
+                        onChange={handleDropOffDateChange}
                         placeholder="Select your date"
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="rentalTime">Time</label>
+                      <label htmlFor="dropOffTime">Time</label>
                       <input
                         type="time"
                         className="form-control"
-                        id="rentalTime"
-                        value={time}
-                        onChange={handleTimeChange}
+                        id="dropOffTime"
+                        value={dropOffTime}
+                        onChange={handleDropOffTimeChange}
                         placeholder="Select your time"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
