@@ -5,6 +5,9 @@ import StarRating from "./StarRating";
 import { View, View2, View3 } from "../../assets";
 
 const CarDetails = ({ carId }) => {
+  const handleRatingChange = (newRating) => {
+    console.log("New rating:", newRating);
+  };
   const [recommendedCars, setRecommendedCars] = useState([]);
   const [popularCars, setPopularCars] = useState([]);
   const [combinedCars, setCombinedCars] = useState([]);
@@ -118,7 +121,14 @@ const CarDetails = ({ carId }) => {
                     <div className="cata-head">
                       <h4>{car.carName}</h4>
                       <div className="starating">
-                        <StarRating totalStars={5} />
+                        <StarRating
+                          totalStars={5}
+                          size={24}
+                          color="#ff6347"
+                          emptyColor="#ccc"
+                          initialRating={1}
+                          onRatingChange={handleRatingChange}
+                        />
                         <p>
                           <span>440+ Reviews</span>
                         </p>

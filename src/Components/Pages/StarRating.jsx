@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
-import './style.scss'; // Optional: Create a SCSS file for styling if needed
+import React, { useState } from "react";
+import { FaStar } from "react-icons/fa";
+import "./style.scss";
 
-const StarRating = ({ totalStars = 5 }) => {
-  const [rating, setRating] = useState(0); // State to hold the current rating
+const StarRating = ({
+  totalStars = 3,
+  size = 18,
+  color = "#ffc107",
+  emptyColor = "#e4e5e9",
+  initialRating = 0,
+  onRatingChange,
+}) => {
+  const [rating, setRating] = useState(initialRating); // State to hold the current rating
   const [hover, setHover] = useState(null); // State to track hovered star
 
+  const handleClick = (ratingValue) => {
+    setRating(ratingValue);
+    if (onRatingChange) {
+      onRatingChange(ratingValue); // Call the callback function if provided
+    }
+  };
+
   return (
-    <div className="star-rating"> {/* Container for the star rating component */}
+    <div className="star-rating">
+      {" "}
+      {/* Container for the star rating component */}
       {[...Array(totalStars)].map((_, index) => {
         const ratingValue = index + 1; // Calculate the rating value (1-based index)
 
@@ -17,13 +33,13 @@ const StarRating = ({ totalStars = 5 }) => {
               type="radio"
               name="rating"
               value={ratingValue}
-              onClick={() => setRating(ratingValue)} // Update rating on click
-              style={{ display: 'none' }} // Hide the actual radio input
+              onClick={() => handleClick(ratingValue)} // Update rating on click
+              style={{ display: "none" }} // Hide the actual radio input
             />
             <FaStar
               className="star" // Class for styling the star icon
-              color={ratingValue <= (hover || rating) ? '#ffc107' : '#e4e5e9'} // Color based on hover or current rating
-              size={18} // Size of the star icon
+              color={ratingValue <= (hover || rating) ? color : emptyColor} // Color based on hover or current rating
+              size={size} // Size of the star icon
               onMouseEnter={() => setHover(ratingValue)} // Set hover state on mouse enter
               onMouseLeave={() => setHover(null)} // Clear hover state on mouse leave
             />
