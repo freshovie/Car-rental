@@ -92,7 +92,6 @@ const Sidebar2 = () => {
                           color="#ff6347"
                           emptyColor="#ccc"
                           initialRating={1}
-                          onRatingChange={handleRatingChange}
                         />
                       <p>440+ Reviewers</p>
                     </div>
