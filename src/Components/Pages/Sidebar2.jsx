@@ -86,7 +86,14 @@ const Sidebar2 = () => {
                   <div className="iteminfo">
                     <h2>{car.carName}</h2>
                     <div className="itemrating">
-                      <StarRating rating={car.rating} className="starating" />
+                    <StarRating
+                          totalStars={5}
+                          size={16}
+                          color="#ff6347"
+                          emptyColor="#ccc"
+                          initialRating={1}
+                          onRatingChange={handleRatingChange}
+                        />
                       <p>440+ Reviewers</p>
                     </div>
                   </div>

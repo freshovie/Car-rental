@@ -10,7 +10,7 @@ const CarReviews = () => {
       <div className="row">
         {/* Empty column for spacing on the left side */}
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
-        
+
         {/* Main content column */}
         <div className="col-sm-12 col-md-12 col-lg-10">
           {/* Reviews header */}
@@ -22,7 +22,7 @@ const CarReviews = () => {
           <div className="review-box">
             {/* Reviewer profile image */}
             <img src={Profile} alt="Profile" />
-            
+
             {/* Container for the review content */}
             <div className="container">
               <div className="review">
@@ -34,7 +34,14 @@ const CarReviews = () => {
                 {/* Review date and star rating */}
                 <div className="date">
                   <p>21 July 2022</p>
-                  <StarRating />
+                  <StarRating
+                    totalStars={5}
+                    size={24}
+                    color="#ff6347"
+                    emptyColor="#ccc"
+                    initialRating={1}
+                    onRatingChange={handleRatingChange}
+                  />
                 </div>
               </div>
               {/* Review text */}
@@ -51,7 +58,7 @@ const CarReviews = () => {
           <div className="review-box">
             {/* Reviewer profile image */}
             <img src={Profile2} alt="Profile2" />
-            
+
             {/* Container for the review content */}
             <div className="container">
               <div className="review">
