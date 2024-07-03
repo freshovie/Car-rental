@@ -1540,13 +1540,14 @@
 .sidebar2{
   position: absolute;
   top: 110px;
-  right: 200px;
-  width: 400px;
+  right: 180px;
+  width: 500px;
   height: 70vh;
   z-index: 0;
   background-color: #fff;
   padding: 30px 1px;
   overflow: hidden;
+  border-radius: 10px;
   .container{
     span{
       color: #9eaec7;
@@ -1555,21 +1556,44 @@
       .item{
         display: flex;
         justify-content: space-between;
-        div{
-          border: 1px solid blue;
-          padding: 10px;
+        padding: 5px;
           img{
-            width: 100px;
-            height: 100px;
+            width: 150px;
           }
-        }
         .iteminfo{
           border: none;
           .itemrating{
             display: flex;
-            justify-content: space-between;
-            
+            align-items: baseline;
+            gap: 10px;
+            color: #8c97a7;
+            font-size: 10px;
           }
+        }
+        hr{
+          color: #f0f4f9;
+        }
+      }
+      .itemfunds{
+        display: flex;
+        justify-content: space-between;
+      }
+      .applys{
+        background-color: #f6f7f6;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0px 0px 0px;
+        color: #90a3bf;
+        span{
+          color: #282d39;
+        }
+      }
+      .itemsprice{
+        display: flex;
+        justify-content: space-between;
+        p{
+          color: #acbacf;
         }
       }
     }

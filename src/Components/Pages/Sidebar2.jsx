@@ -99,6 +99,7 @@ const Sidebar2 = () => {
                   <hr />
                 </div>
               ))}
+              <hr />
               <div className="itemfunds">
                 <p>Subtotal</p>
                 <p>
@@ -114,11 +115,9 @@ const Sidebar2 = () => {
                   ).toFixed(2)}
                 </p>
               </div>
-              <div>
+              <div className="applys">
                 <p>Apply promo code</p>
-                <p>
                   <span>Apply now</span>
-                </p>
               </div>
               <div className="itemsprice">
                 <div className="total">
