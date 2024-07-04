@@ -80,19 +80,19 @@ const Sidebar2 = () => {
             <div className="itemsdetails">
               {combinedCars.map((car, index) => (
                 <div className="item" key={car.id}>
-                  <div>
+                  <div className="imgB">
                     <img src={car.image} alt={car.name} />
                   </div>
                   <div className="iteminfo">
                     <h2>{car.carName}</h2>
                     <div className="itemrating">
-                    <StarRating
-                          totalStars={5}
-                          size={16}
-                          color="#ff6347"
-                          emptyColor="#ccc"
-                          initialRating={1}
-                        />
+                      <StarRating
+                        totalStars={5}
+                        size={16}
+                        color="#ff6347"
+                        emptyColor="#ccc"
+                        initialRating={1}
+                      />
                       <p>440+ Reviewers</p>
                     </div>
                   </div>
@@ -102,9 +102,12 @@ const Sidebar2 = () => {
               <hr />
               <div className="itemfunds">
                 <p>Subtotal</p>
-                <p>
-                  {combinedCars.reduce((total, car) => total + car.price, 0)}
-                </p>
+                {combinedCars.reduce((total, car) => total + car.price, 0) >
+                  0 && (
+                  <p>
+                    {combinedCars.reduce((total, car) => total + car.price, 0)}
+                  </p>
+                )}
               </div>
               <div className="itemfunds">
                 <p>Tax</p>
@@ -116,15 +119,15 @@ const Sidebar2 = () => {
                 </p>
               </div>
               <div className="applys">
-                <p>Apply promo code</p>
-                  <span>Apply now</span>
+               <input type="text"  placeholder="Apply promo code" />
+                <button>Apply now</button>
               </div>
               <div className="itemsprice">
                 <div className="total">
                   <h3>Total Rental Price</h3>
                   <p>Overall price and includes rental discount</p>
                 </div>
-                <h1>
+                <h1>$
                   {(
                     combinedCars.reduce((total, car) => total + car.price, 0) *
                     1.1

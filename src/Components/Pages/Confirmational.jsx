@@ -10,7 +10,7 @@ const Confirmation = () => {
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
           <div className="col-sm-12 col-md-12 col-lg-10">
-            <div className="confirmation-content">
+            <div className="container">
               <HeadStart
                 headH3="Confirmation"
                 headP="We are getting to the end. Just few clicks and your rental is ready!"
