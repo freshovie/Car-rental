@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./style.scss"; // Importing component styles
 import HeadStart from "./HeadStart";
+import AOS from "aos";
 
 const Payment = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
   return (
-    <div className="payment">
+    <div className="payment" data-aos="fade-up">
       {" "}
       {/* Container for the payment component */}
       <div className="row">

@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./style.scss";
 import { Bitcoin, MasterCard, PayPal, Visa } from "../../assets";
 import HeadStart from "./HeadStart";
+import AOS from "aos";
 
 const PMethod = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
   return (
     <React.Fragment>
-      <div className="pmethod">
+      <div className="pmethod" data-aos="fade-up">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
           <div className="col-sm-12 col-md-12 col-lg-10">

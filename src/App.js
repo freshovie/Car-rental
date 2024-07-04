@@ -1,7 +1,8 @@
 import './App.scss';
-import Display from './Components/Display';
+import Display from './Display';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "aos/dist/aos.css";
 
 
 function App() {

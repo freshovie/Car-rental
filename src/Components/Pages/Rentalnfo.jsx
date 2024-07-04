@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeadStart from "./HeadStart";
 import "./style.scss";
+import AOS from "aos";
 
 const RentalInfo = () => {
   const [cities, setCities] = useState([]);
@@ -23,6 +24,10 @@ const RentalInfo = () => {
     };
 
     fetchCities();
+
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
   }, []);
 
   const handlePickUpDateChange = (e) => {
@@ -43,7 +48,7 @@ const RentalInfo = () => {
 
   return (
     <React.Fragment>
-      <div className="rentalinfo">
+      <div className="rentalinfo" data-aos="fade-up">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
           <div className="col-sm-12 col-md-12 col-lg-10">

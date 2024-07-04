@@ -227,129 +227,6 @@
   }
 }
 
-.PopularCar {
-  margin-top: 20px;
-  .card-tagss {
-    grid-template-columns: repeat(4, 1fr);
-    display: grid;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-    .icard {
-      flex: 1 1 45%; /* Flex-grow and flex-basis for responsiveness */
-      margin: 10px; /* Added margin for better spacing */
-      .card {
-        height: 435px;
-        .card-body {
-          .first {
-            margin-top: 10px;
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            .first-sect {
-              h4 {
-                color: #1a202c;
-              }
-              p {
-                color: #90a3bf;
-              }
-            }
-          }
-          img {
-            margin-top: 10px;
-            width: 100%; /* Ensures the image takes full width */
-          }
-          .first-icons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            .icons {
-              display: flex;
-              align-items: baseline;
-              gap: 3px;
-              color: #90a3bf;
-            }
-          }
-          .price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center; /* Align items vertically */
-            margin-top: 20px;
-            p {
-              color: #90a3bf;
-              span {
-                color: #1a202c;
-              }
-            }
-            button {
-              color: #fff;
-              background-color: #3563e9;
-              border: none;
-              padding: 10px 20px;
-              border-radius: 5px;
-              cursor: pointer;
-            }
-            button:hover {
-              background-color: #5074c2;
-            }
-          }
-          s {
-            color: #90a3bf;
-            font-size: 12px;
-          }
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 768px) {
-    .card-tagss {
-      flex-wrap: wrap; /* Added for responsiveness */
-      flex-direction: column;
-      display: flex;
-      .icard {
-        flex: 1 1 100%; /* Full width for small screens */
-        margin: 10px;
-        .card {
-          height: 460px;
-          .card-body {
-            .first {
-              flex-direction: row;
-              margin-bottom: 10px;
-            }
-            .first-icons {
-              margin: 10px 0px;
-              .icons {
-                align-items: baseline;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  @media screen and (min-width: 768px) and (max-width: 1250px) {
-    .card-tagss {
-      grid-template-columns: repeat(2, 1fr);
-      display: grid;
-      flex-wrap: wrap;
-      .icard {
-        .card {
-          height: 435px;
-        }
-      }
-    }
-  }
-  @media screen and (max-width: 435px) {
-    .card-tagss {
-      .icard {
-        .card {
-          height: 455px;
-        }
-      }
-    }
-  }
-}
-
 .recommend {
   margin-top: 20px;
   .card-tag {
@@ -562,7 +439,6 @@
 .content {
   margin-left: 100px;
   padding: 1px 16px;
-  // height: 1000px;
   .card-tags {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1558,8 +1434,7 @@
       .item {
         display: flex;
         justify-content: space-around;
-        // gap: 10px;
-        // padding: 5px;
+        gap: 5px;
         width: 100%;
         .imgB {
           border: 1px solid blue;

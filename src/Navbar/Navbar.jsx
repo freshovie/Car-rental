@@ -1,16 +1,44 @@
-import React from "react";
-import "./navbar.scss";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import AOS from "aos";
 import { Profile, Like, Notification, Settings } from "../assets";
 import { CiSearch } from "react-icons/ci";
 import { VscSettings } from "react-icons/vsc";
+import "./navbar.scss";
 
 const Navbar = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
+
+  const textAnimation = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-aos="fade-down">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          MORENT
+          <motion.div
+            variants={textAnimation}
+            initial="hidden"
+            animate="visible"
+          >
+            MORENT
+          </motion.div>
         </Link>
         <button
           className="navbar-toggler"
@@ -36,7 +64,7 @@ const Navbar = () => {
               <VscSettings className="filter-icon" />
             </div>
           </form>
-          <div className="icons ms-auto d-flex align-items-center">
+          <div className="icons ms-auto d-flex">
             <img src={Like} alt="Like" className="icon" />
             <img src={Notification} alt="Notification" className="icon" />
             <img src={Settings} alt="Settings" className="icon" />

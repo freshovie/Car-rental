@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import StarRating from "./StarRating";
 import "./style.scss";
+import AOS from "aos";
+import { motion } from "framer-motion";
+import { Ad2 } from "../../assets";
+
 
 const Sidebar2 = () => {
   const [recommendedCars, setRecommendedCars] = useState([]);
@@ -42,6 +46,9 @@ const Sidebar2 = () => {
       );
       setCombinedCars(combined);
     }
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
   }, [recommendedCars, popularCars]);
 
   const shuffleArray = (array) => {
@@ -63,6 +70,25 @@ const Sidebar2 = () => {
 
     return array;
   };
+    // Component to render the link for car details
+    const ItemLink = ({ item, children }) => {
+      return (
+        <a href={`cardetails?id=${item.id}`}>
+          {children}
+          <motion.img
+            src={item.image}
+            alt={`${item.carName} car`}
+            whileHover={{ scale: 1.1 }} // Scale up on hover effect
+          />
+        </a>
+      );
+    };
+  
+    // Variants for the item elements animations
+    const itemVariants = {
+      hidden: { y: 20, opacity: 0 }, // Initial hidden state
+      visible: { y: 0, opacity: 1 }, // Visible state
+    };
 
   return (
     <div className="sidebar2">
@@ -79,9 +105,16 @@ const Sidebar2 = () => {
             </p>
             <div className="itemsdetails">
               {combinedCars.map((car, index) => (
+                 <motion.div
+                 className="icard"
+                 key={car.id}
+                 variants={itemVariants}
+                 initial="hidden"
+                 animate="visible"
+               >
                 <div className="item" key={car.id}>
-                  <div className="imgB">
-                    <img src={car.image} alt={car.name} />
+                  <div className="imgB" style={{ backgroundImage: `url(${Ad2})` }}>
+                  <ItemLink item={car}></ItemLink>
                   </div>
                   <div className="iteminfo">
                     <h2>{car.carName}</h2>
@@ -91,13 +124,14 @@ const Sidebar2 = () => {
                         size={16}
                         color="#ff6347"
                         emptyColor="#ccc"
-                        initialRating={1}
+                        initialRating={0}
                       />
                       <p>440+ Reviewers</p>
                     </div>
                   </div>
                   <hr />
                 </div>
+            </motion.div>
               ))}
               <hr />
               <div className="itemfunds">
@@ -119,7 +153,7 @@ const Sidebar2 = () => {
                 </p>
               </div>
               <div className="applys">
-               <input type="text"  placeholder="Apply promo code" />
+                <input type="text" placeholder="Apply promo code" />
                 <button>Apply now</button>
               </div>
               <div className="itemsprice">
@@ -127,7 +161,8 @@ const Sidebar2 = () => {
                   <h3>Total Rental Price</h3>
                   <p>Overall price and includes rental discount</p>
                 </div>
-                <h1>$
+                <h1>
+                  $
                   {(
                     combinedCars.reduce((total, car) => total + car.price, 0) *
                     1.1

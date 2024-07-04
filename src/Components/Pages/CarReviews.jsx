@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
+import AOS from"aos";
 import "./style.scss";
 import { Profile, Profile2 } from "../../assets";
 import StarRating from "./StarRating";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 const CarReviews = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
+
   return (
     <div className="carreview">
       <div className="row">
@@ -19,7 +26,7 @@ const CarReviews = () => {
           </h3>
 
           {/* First review box */}
-          <div className="review-box">
+          <div className="review-box" data-aos="flip-down">
             {/* Reviewer profile image */}
             <img src={Profile} alt="Profile" />
 
@@ -39,7 +46,7 @@ const CarReviews = () => {
                     size={24}
                     color="#ff6347"
                     emptyColor="#ccc"
-                    initialRating={1}
+                    initialRating={0}
                   />
                 </div>
               </div>
@@ -54,7 +61,7 @@ const CarReviews = () => {
           </div>
 
           {/* Second review box */}
-          <div className="review-box">
+          <div className="review-box" data-aos="flip-down">
             {/* Reviewer profile image */}
             <img src={Profile2} alt="Profile2" />
 
@@ -69,7 +76,13 @@ const CarReviews = () => {
                 {/* Review date and star rating */}
                 <div className="date">
                   <p>20 July 2022</p>
-                  <StarRating />
+                  <StarRating
+                    totalStars={5}
+                    size={24}
+                    color="#ff6347"
+                    emptyColor="#ccc"
+                    initialRating={0}
+                  />
                 </div>
               </div>
               {/* Review text */}

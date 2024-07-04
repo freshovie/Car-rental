@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Navbar from "../Navbar/Navbar";
-import Label from "../Label/Label";
-import Footer from "../Footer/Footer";
+import Navbar from "./Navbar/Navbar";
+import Label from "./Label/Label";
+import Footer from "./Footer/Footer";
 import {
   CarDisplay,
   OffUp,
@@ -21,8 +21,8 @@ import {
   Sidebar2,
   Confirmational,
   Rentalnfo,
-} from "./Pages";
-import { Main4042 } from "../assets";
+} from "./Components/Pages";
+import { Main4042 } from "./assets";
 
 const Display = () => {
   const notFoundStyles = {

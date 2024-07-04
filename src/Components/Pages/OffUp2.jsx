@@ -1,10 +1,17 @@
+import React, {useEffect} from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { LuArrowUpDown } from "react-icons/lu";
+import AOS from "aos";
 import "./style.scss"; // Importing component styles
 
 const Offup2 = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
   return (
-    <div className="offup2"> {/* Container for the component */}
+    <div className="offup2" data-aos="fade-out"> {/* Container for the component */}
       <div className="row"> {/* Bootstrap row for layout */}
         <div className="col-12 col-lg-1"></div> {/* Spacer column for layout */}
         <div className="col-12 col-lg-10">

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss"; // Importing the SCSS stylesheet for styling
-import { FaHeart, FaGasPump } from "react-icons/fa6"; // Importing FontAwesome icons
-import { TbWheel } from "react-icons/tb"; // Importing Tabler icons
-import { MdPeopleAlt } from "react-icons/md"; // Importing Material Design icons
+import { FaHeart, FaGasPump } from "react-icons/fa";
+import { TbWheel } from "react-icons/tb";
+import { MdPeopleAlt } from "react-icons/md";
 import Headpage from "./Headpage";
+import AOS from "aos";
+import { motion } from "framer-motion"; // Ensure you import framer-motion
 
 const Recommended = () => {
   const [cars, setCars] = useState([]); // State to hold the list of cars
@@ -22,23 +24,39 @@ const Recommended = () => {
 
   // Function to handle the like button click for each car
   const handleLikeClick = (index) => {
-    setLiked(
-      (prevLiked) =>
-        prevLiked.map((item, idx) => (idx === index ? !item : item)) // Toggle the liked state for the clicked car
+    setLiked((prevLiked) =>
+      prevLiked.map((item, idx) => (idx === index ? !item : item))
     );
   };
 
-    // Component to render the link for car details
-    const ItemLink = ({ item, children }) => {
-      return (
-        <a href={`cardetails?id=${item.id}`}>
-          {children}
-        </a>
-      );
-    };
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
+
+  // Component to render the link for car details
+  const ItemLink = ({ item, children }) => {
+    return (
+      <a href={`cardetails?id=${item.id}`}>
+        {children}
+        <motion.img
+          src={item.image}
+          alt={`${item.carName} car`}
+          whileHover={{ scale: 1.1 }} // Scale up on hover effect
+        />
+      </a>
+    );
+  };
+
+  // Variants for the item elements animations
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 }, // Initial hidden state
+    visible: { y: 0, opacity: 1 }, // Visible state
+  };
 
   return (
-    <div className="recommend">
+    <div className="recommend" data-aos="fade-up">
       <Headpage heading="Recommended Cars" />{" "}
       {/* Use Headpage component with custom heading */}
       <div className="row">
@@ -46,7 +64,14 @@ const Recommended = () => {
         <div className="col-sm-12 col-md-12 col-lg-10">
           <div className="card-tag">
             {cars.map((car, index) => (
-              <div className="icard" key={car.id}>
+              <motion.div
+                className="icard"
+                key={car.id}
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ scale: 1.02 }} // Slightly scale up on hover
+              >
                 <div className="card">
                   <div className="card-body">
                     <div className="first">
@@ -55,14 +80,14 @@ const Recommended = () => {
                         <p>{car.carType}</p>
                       </div>
                       <FaHeart
-                        style={{ color: liked[index] ? "red" : "grey" }} // Change the color based on liked state
+                        style={{
+                          color: liked[index] ? "red" : "grey",
+                          transition: "color 0.3s ease",
+                        }} // Change the color based on liked state
                         onClick={() => handleLikeClick(index)} // Handle like button click
                       />
                     </div>
-                    <ItemLink item={car}>
-                      <img src={car.image} alt={`${car.carName} car`} /> {/* Display the car image */}
-                    </ItemLink>
-                    {/* Display the car image */}
+                    <ItemLink item={car}></ItemLink>
                     <div className="first-icons">
                       <div className="icons">
                         <FaGasPump />
@@ -82,14 +107,14 @@ const Recommended = () => {
                         <p>
                           <span>${car.price}/</span>day
                         </p>
+                        {car.isGold && <s>${car.isGold}</s>}{" "}
+                        {/* Display the original price if available */}
                       </div>
                       <button>Rent Now</button>
                     </div>
-                    {car.isGold && <s>${car.isGold}</s>}{" "}
-                    {/* Display the original price if available */}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Security } from "../../assets";
 import "./style.scss";
 import HeadStart from "./HeadStart";
+import AOS from "aos";
 
 const Confirmation = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
   return (
     <React.Fragment>
-      <div className="confirmation">
+      <div className="confirmation" data-aos="fade-up">
         <div className="row">
           <div className="col-sm-12 col-md-12 col-lg-1"></div>
           <div className="col-sm-12 col-md-12 col-lg-10">

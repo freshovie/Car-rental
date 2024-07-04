@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import AOS from "aos";
 import './style.scss';
 
 const Sidebar = () => {
@@ -60,9 +61,14 @@ const Sidebar = () => {
       </div>
     ));
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
 
   return (
-    <div className="sidebar"> {/* Main container for the sidebar */}
+    <div className="sidebar" data-aos="fade-out"> {/* Main container for the sidebar */}
       <div className="sidebar-first"> {/* First section of the sidebar */}
         <div className="sidebar__header"> {/* Header for types section */}
           <h5>Type</h5>

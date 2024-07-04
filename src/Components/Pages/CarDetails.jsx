@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import AOS from "aos";
 import "./style.scss";
 import { FaHeart } from "react-icons/fa";
 import StarRating from "./StarRating";
 import { View, View2, View3 } from "../../assets";
+import { motion } from "framer-motion"; // Ensure you import framer-motion
 
 const CarDetails = ({ carId }) => {
   const handleRatingChange = (newRating) => {
@@ -49,6 +51,12 @@ const CarDetails = ({ carId }) => {
     }
   }, [recommendedCars, popularCars]);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1200, // Duration of the animations in milliseconds
+    });
+  }, []);
+
   // Handle like button click
   const handleLikeClick = (id) => {
     setLiked((prevLiked) => ({
@@ -78,7 +86,7 @@ const CarDetails = ({ carId }) => {
   ];
 
   return (
-    <div className="cardetails">
+    <div className="cardetails" data-aos="fade-out">
       <div className="row">
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
         <div className="col-sm-12 col-md-12 col-lg-10">
