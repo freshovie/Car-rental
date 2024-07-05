@@ -1,8 +1,8 @@
-import React, {useEffect} from "react";
-import { motion } from "framer-motion";
-import AOS from "aos";
-import "./style.scss";
-import { Ad1, Ad2, Koenigsegg, Nissan } from "../../assets";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion"; // Import framer-motion for animations
+import AOS from "aos"; // Import AOS for animations on scroll
+import "./style.scss"; // Import SCSS file for styling
+import { Ad1, Ad2, Koenigsegg, Nissan } from "../../assets"; // Import image assets
 
 const CarDisplay = () => {
   useEffect(() => {
@@ -44,7 +44,7 @@ const CarDisplay = () => {
             variants={containerVariants} // Apply container variants
             initial="hidden" // Initial state
             animate="visible" // Animation state
-            data-aos= "fade-up"
+            data-aos="fade-up" // Apply AOS animation
           >
             {/* First car display card */}
             <motion.div className="car1d" variants={itemVariants}>

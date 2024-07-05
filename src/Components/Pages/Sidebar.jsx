@@ -63,7 +63,7 @@ const Sidebar = () => {
   };
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Duration of the animations in milliseconds
+      duration: 1000, // Duration of the animations in milliseconds
     });
   }, []);
 

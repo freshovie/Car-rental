@@ -1,14 +1,18 @@
-import React from 'react';
-import { Command } from '../assets';
-import './label.scss';
+import React from 'react'; // Import React
+import { Command } from '../assets'; // Import the Command image from the assets folder
+import './label.scss'; // Import the SCSS file for styling
 
+// Define the Label functional component
 function Label() {
   return (
     <div className="label">
-        <img src={ Command } alt="" />
-        <h3>High Fidelity Dashboard - Home Rent</h3>
+      {/* Image element displaying the Command image */}
+      <img src={Command} alt="Command icon" />
+      {/* Heading element displaying the text */}
+      <h3>High Fidelity Dashboard - Home Rent</h3>
     </div>
-  )
+  );
 }
 
-export default Label
+// Export the Label component as the default export
+export default Label;

@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "./style.scss";
-import { FaHeart } from "react-icons/fa";
-import StarRating from "./StarRating";
-import { View, View2, View3 } from "../../assets";
-import { motion } from "framer-motion"; // Ensure you import framer-motion
+import React, { useEffect, useState } from "react"; // Import necessary modules from React
+import AOS from "aos"; // Import AOS for animations
+import "./style.scss"; // Import the SCSS file for styling
+import { FaHeart } from "react-icons/fa"; // Import the heart icon from react-icons
+import StarRating from "./StarRating"; // Import the StarRating component
+import { View, View2, View3 } from "../../assets"; // Import image assets
+import { motion } from "framer-motion"; // Import framer-motion for animations
 
 const CarDetails = ({ carId }) => {
   const handleRatingChange = (newRating) => {
     console.log("New rating:", newRating);
   };
-  const [recommendedCars, setRecommendedCars] = useState([]);
-  const [popularCars, setPopularCars] = useState([]);
-  const [combinedCars, setCombinedCars] = useState([]);
-  const [liked, setLiked] = useState({});
-  const [background, setBackground] = useState(View); // Initial background image
+
+  const [recommendedCars, setRecommendedCars] = useState([]); // State to hold recommended cars
+  const [popularCars, setPopularCars] = useState([]); // State to hold popular cars
+  const [combinedCars, setCombinedCars] = useState([]); // State to hold combined cars
+  const [liked, setLiked] = useState({}); // State to hold liked status of cars
+  const [background, setBackground] = useState(View); // State to hold the background image
 
   // Fetch recommended cars from the server
   useEffect(() => {
@@ -51,6 +52,7 @@ const CarDetails = ({ carId }) => {
     }
   }, [recommendedCars, popularCars]);
 
+  // Initialize AOS for animations
   useEffect(() => {
     AOS.init({
       duration: 1200, // Duration of the animations in milliseconds

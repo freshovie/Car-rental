@@ -8,12 +8,14 @@ import { VscSettings } from "react-icons/vsc";
 import "./navbar.scss";
 
 const Navbar = () => {
+  // Initialize AOS (Animate On Scroll) library when the component mounts
   useEffect(() => {
     AOS.init({
       duration: 1200, // Duration of the animations in milliseconds
     });
   }, []);
 
+  // Animation variants for the navbar text
   const textAnimation = {
     hidden: {
       opacity: 0,
@@ -31,6 +33,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary sticky-top" data-aos="fade-down">
       <div className="container-fluid">
+        {/* Brand link with animation */}
         <Link className="navbar-brand" to="/">
           <motion.div
             variants={textAnimation}
@@ -40,6 +43,7 @@ const Navbar = () => {
             MORENT
           </motion.div>
         </Link>
+        {/* Navbar toggle button for mobile view */}
         <button
           className="navbar-toggler"
           type="button"
@@ -51,7 +55,9 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+        {/* Collapsible navbar content */}
         <div className="collapse navbar-collapse" id="navbarNav">
+          {/* Search form */}
           <form className="d-flex search-form mx-auto" role="search">
             <div className="search-container">
               <CiSearch className="search-icon" />
@@ -64,6 +70,7 @@ const Navbar = () => {
               <VscSettings className="filter-icon" />
             </div>
           </form>
+          {/* Navbar icons */}
           <div className="icons ms-auto d-flex">
             <img src={Like} alt="Like" className="icon" />
             <img src={Notification} alt="Notification" className="icon" />

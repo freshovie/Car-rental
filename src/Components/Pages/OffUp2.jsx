@@ -21,9 +21,9 @@ const Offup2 = () => {
               <div className="topradio">
                 <input
                   type="radio"
-                  id="option1"
+                  id="option"
                   name="options"
-                  value="option1"
+                  value="option"
                   checked={true} // Example of being checked, can be dynamic based on state
                   readOnly
                 />
@@ -61,9 +61,9 @@ const Offup2 = () => {
               <div className="topradio">
                 <input
                   type="radio"
-                  id="option2"
-                  name="options2"
-                  value="option2"
+                  id="option"
+                  name="options"
+                  value="option"
                   checked={true} // Example of being checked, can be dynamic based on state
                   readOnly
                 />
