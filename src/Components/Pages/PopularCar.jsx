@@ -28,6 +28,7 @@ const PopularCar = () => {
       prevLiked.map((item, idx) => (idx === index ? !item : item))
     );
   };
+
   useEffect(() => {
     AOS.init({
       duration: 1200, // Duration of the animations in milliseconds
@@ -71,50 +72,52 @@ const PopularCar = () => {
                 animate="visible"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="card">
-                  <div className="card-body">
-                    <div className="first">
-                      <div className="first-sect">
-                        <h4>{car.carName}</h4>
-                        <p>{car.carType}</p>
+                <React.Fragment>
+                  <div className="card">
+                    <div className="card-body">
+                      <div className="first">
+                        <div className="first-sect">
+                          <h4>{car.carName}</h4>
+                          <p>{car.carType}</p>
+                        </div>
+                        <FaHeart
+                          style={{
+                            color: liked[index] ? "red" : "grey",
+                            transition: "color 0.3s ease",
+                          }}
+                          onClick={() => handleLikeClick(index)} // Handle like button click
+                        />
                       </div>
-                      <FaHeart
-                        style={{
-                          color: liked[index] ? "red" : "grey",
-                          transition: "color 0.3s ease",
-                        }}
-                        onClick={() => handleLikeClick(index)} // Handle like button click
-                      />
+                      <ItemLink item={car}>
+                        {/* Display the car image */}
+                      </ItemLink>
+                      <div className="first-icons">
+                        <div className="icons">
+                          <FaGasPump />
+                          <p>{car.fuelCapacity}</p>
+                        </div>
+                        <div className="icons">
+                          <TbWheel />
+                          <p>{car.transmission}</p>
+                        </div>
+                        <div className="icons">
+                          <MdPeopleAlt />
+                          <p>{car.seatingCapacity}</p>
+                        </div>
+                      </div>
+                      <div className="price">
+                        <div className="price-info">
+                          <p>
+                            <span>${car.price}/</span>day
+                          </p>
+                          {car.isGold && <s>${car.isGold}</s>}{" "}
+                          {/* Display the original price if available */}
+                        </div>
+                        <button>Rent Now</button>
+                      </div>
                     </div>
-                    <ItemLink item={car}>
-                      {/* Display the car image */}
-                    </ItemLink>
-                    <div className="first-icons">
-                      <div className="icons">
-                        <FaGasPump />
-                        <p>{car.fuelCapacity}</p>
-                      </div>
-                      <div className="icons">
-                        <TbWheel />
-                        <p>{car.transmission}</p>
-                      </div>
-                      <div className="icons">
-                        <MdPeopleAlt />
-                        <p>{car.seatingCapacity}</p>
-                      </div>
-                    </div>
-                    <div className="price">
-                      <div className="price-info">
-                        <p>
-                          <span>${car.price}/</span>day
-                        </p>
-                        {car.isGold && <s>${car.isGold}</s>}{" "}
-                      </div>
-                      <button>Rent Now</button>
-                    </div>
-                    {/* Display the original price if available */}
                   </div>
-                </div>
+                </React.Fragment>
               </motion.div>
             ))}
           </div>
