@@ -113,7 +113,9 @@ const PopularCar = () => {
                           {car.isGold && <s>${car.isGold}</s>}{" "}
                           {/* Display the original price if available */}
                         </div>
-                        <button>Rent Now</button>
+                        <a href={`cardetails?id=${car.id}`}>
+                          <button>Rent Now</button>
+                        </a>
                       </div>
                     </div>
                   </div>
