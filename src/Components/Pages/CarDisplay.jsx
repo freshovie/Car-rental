@@ -86,9 +86,11 @@ const CarDisplay = () => {
                   Providing cheap car rental services <br /> and safe and
                   comfortable facilities.
                 </motion.p>
+                <a href={`cardetails?id=${car.id}`}>
                 <motion.button className="rentbtn2" variants={itemVariants}>
                   Rental Car
                 </motion.button>
+                </a>
               </div>
               
               {/* Foreground car image with hover effect */}
