@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import framer-motion for animations
 import AOS from "aos"; // Import AOS for animations on scroll
 import "./style.scss"; // Import SCSS file for styling
-import { Ad1, Ad2, Koenigsegg, Nissan } from "../../assets"; // Import image assets
+import { Ad1, Koenigsegg, Nissan } from "../../assets"; // Import image assets
 
 const CarDisplay = () => {
+  const [backgroundImage, setBackgroundImage] = useState(Ad1); // State to keep track of the background image
+
   useEffect(() => {
     AOS.init({
       duration: 1200, // Duration of the animations in milliseconds
@@ -31,8 +33,13 @@ const CarDisplay = () => {
     hover: { scale: 1.2 }, // Scale up on hover
   };
 
+  // Function to handle background image change
+  const handleBackgroundChange = (image) => {
+    setBackgroundImage(image);
+  };
+
   return (
-    <div className="car-display">
+    <div className="car-display" style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="row">
         {/* Empty column for spacing on the left side */}
         <div className="col-sm-12 col-md-12 col-lg-1"></div>
@@ -48,9 +55,6 @@ const CarDisplay = () => {
           >
             {/* First car display card */}
             <motion.div className="car1d" variants={itemVariants}>
-              {/* Background image for the first card */}
-              <img src={Ad1} alt="Ad1" className="w-100" />
-              
               {/* Inner content of the first card */}
               <div className="innercar">
                 <motion.h1 variants={itemVariants}>
@@ -61,7 +65,11 @@ const CarDisplay = () => {
                   Ease of doing a car rental safely <br /> and reliably. Of
                   course at a low price.
                 </motion.p>
-                <motion.button className="rentbtn1" variants={itemVariants}>
+                <motion.button 
+                  className="rentbtn1" 
+                  variants={itemVariants}
+                  onClick={() => handleBackgroundChange(Koenigsegg)} // Change background on click
+                >
                   Rental Car
                 </motion.button>
               </div>
@@ -74,9 +82,6 @@ const CarDisplay = () => {
 
             {/* Second car display card */}
             <motion.div className="car1d" variants={itemVariants}>
-              {/* Background image for the second card */}
-              <img src={Ad2} alt="Ad2" className="w-100" />
-              
               {/* Inner content of the second card */}
               <div className="innercar">
                 <motion.h1 variants={itemVariants}>
@@ -86,8 +91,12 @@ const CarDisplay = () => {
                   Providing cheap car rental services <br /> and safe and
                   comfortable facilities.
                 </motion.p>
-                <a href="payment"> {/* Updated the href to a hardcoded link */}
-                  <motion.button className="rentbtn2" variants={itemVariants}>
+                <a href="payment"> 
+                  <motion.button 
+                    className="rentbtn2" 
+                    variants={itemVariants}
+                    onClick={() => handleBackgroundChange(Nissan)} // Change background on click
+                  >
                     Rental Car
                   </motion.button>
                 </a>
