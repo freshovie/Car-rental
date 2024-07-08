@@ -1,35 +1,20 @@
-import React, { useEffect, useState } from "react"; // Import necessary modules from React
-import AOS from "aos"; // Import AOS for animations
-import "./style.scss"; // Import the SCSS file for styling
-import { FaHeart } from "react-icons/fa"; // Import the heart icon from react-icons
-import StarRating from "./StarRating"; // Import the StarRating component
-import { View, View2, View3 } from "../../assets"; // Import image assets
-import { motion } from "framer-motion"; // Import framer-motion for animations
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "./style.scss";
+import { FaHeart } from "react-icons/fa";
+import StarRating from "./StarRating";
+import { View, View2, View3 } from "../../assets";
 
 const CarDetails = ({ carId }) => {
   const handleRatingChange = (newRating) => {
     console.log("New rating:", newRating);
   };
 
-  const [recommendedCars, setRecommendedCars] = useState([]); // State to hold recommended cars
-  const [popularCars, setPopularCars] = useState([]); // State to hold popular cars
-  const [combinedCars, setCombinedCars] = useState([]); // State to hold combined cars
-  const [liked, setLiked] = useState({}); // State to hold liked status of cars
-  const [background, setBackground] = useState(View); // State to hold the background image
+  const [popularCars, setPopularCars] = useState([]);
+  const [liked, setLiked] = useState({});
+  const [background, setBackground] = useState(View);
 
-  // Fetch recommended cars from the server
   useEffect(() => {
-    const fetchRecommendedCars = async () => {
-      try {
-        const response = await fetch("http://localhost:8000/RecommendedCars");
-        const data = await response.json();
-        setRecommendedCars(data);
-      } catch (error) {
-        console.error("Error fetching recommended cars:", error);
-      }
-    };
-
-    // Fetch popular cars from the server
     const fetchPopularCars = async () => {
       try {
         const response = await fetch("http://localhost:8000/cars");
@@ -40,26 +25,15 @@ const CarDetails = ({ carId }) => {
       }
     };
 
-    fetchRecommendedCars();
     fetchPopularCars();
   }, []);
 
-  // Combine recommended and popular cars
-  useEffect(() => {
-    if (recommendedCars.length > 0 || popularCars.length > 0) {
-      const combined = [...recommendedCars, ...popularCars];
-      setCombinedCars(combined);
-    }
-  }, [recommendedCars, popularCars]);
-
-  // Initialize AOS for animations
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Duration of the animations in milliseconds
+      duration: 1200,
     });
   }, []);
 
-  // Handle like button click
   const handleLikeClick = (id) => {
     setLiked((prevLiked) => ({
       ...prevLiked,
@@ -67,20 +41,17 @@ const CarDetails = ({ carId }) => {
     }));
   };
 
-  // Handle background image change
   const handleImageClick = (newPicture) => {
     setBackground(newPicture);
   };
 
-  // Find the car details based on carId
-  const car = combinedCars.find((car) => car.id === carId);
+  const car = popularCars.find((car) => car.id === carId);
 
-  // Show loading message if car details are not available
   if (!car) {
+    console.log("Car details not found:", carId);
     return <div>Please wait...</div>;
   }
 
-  // List of car images
   const pictures = [
     { id: 0, name: View },
     { id: 1, name: View2 },
@@ -113,12 +84,12 @@ const CarDetails = ({ carId }) => {
                 </p>
               </div>
               <div className="changed-image">
-                {pictures.map((item) => (
+                {pictures.map((picture) => (
                   <img
-                    key={item.id}
-                    src={item.name}
-                    alt="pictures"
-                    onClick={() => handleImageClick(item.name)}
+                    key={picture.id}
+                    src={picture.name}
+                    alt="car"
+                    onClick={() => handleImageClick(picture.name)}
                     style={{ cursor: "pointer" }}
                   />
                 ))}
