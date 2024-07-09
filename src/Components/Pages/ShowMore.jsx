@@ -1,5 +1,6 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
+import { Link } from "react-router-dom";
 
 const Showmore = () => {
   useEffect(() => {
@@ -20,7 +21,9 @@ const Showmore = () => {
         <div className="col-sm-12 col-md-12 col-lg-10">
           {" "}
           {/* Column containing the button and car count */}
-          <button className="showmore-btn">Show more car</button>{" "}
+          <Link to={`/category`}>
+            <button className="showmore-btn">Show more car</button>
+          </Link>
           {/* Button to load more cars */}
           <p style={{ textAlign: "end", color: "#90a3bf" }}>120 Car</p>{" "}
           {/* Text indicating total number of cars */}

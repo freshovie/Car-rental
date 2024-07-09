@@ -6,9 +6,7 @@ import "./style.scss"; // Importing component styles
 const Section = ({ title, children }) => (
   <div className="section">
     <p>{title}</p>
-    <div className="dropdown">
-      {children}
-    </div>
+    <div className="dropdown">{children}</div>
   </div>
 );
 
@@ -18,6 +16,7 @@ const OffUp = () => {
   const [pickUpTime, setPickUpTime] = useState("");
   const [dropOffDate, setDropOffDate] = useState("");
   const [dropOffTime, setDropOffTime] = useState("");
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
     const fetchCities = async () => {
@@ -40,132 +39,65 @@ const OffUp = () => {
   const handleDropOffDateChange = (e) => setDropOffDate(e.target.value);
   const handleDropOffTimeChange = (e) => setDropOffTime(e.target.value);
 
-  const containerVariants = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
+  const handleFlip = () => {
+    setIsFlipped((prev) => !prev);
   };
 
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
+  const renderCard = (type, date, time, handleDateChange, handleTimeChange) => (
+    <motion.div className="card">
+      <div className="topradio">
+        <input type="radio" id="option" name="options" value="option" checked readOnly />
+        <h5>{type}</h5>
+      </div>
+      <div className="card-body">
+        <div className="container">
+          <Section title="Location">
+            <select name="locations">
+              {cities.map((city) => (
+                <option key={city.city} value={city.city}>
+                  {city.city}
+                </option>
+              ))}
+            </select>
+          </Section>
+          <Section title="Date">
+            <input
+              type="date"
+              className="form-control"
+              value={date}
+              onChange={handleDateChange}
+              placeholder="Select your date"
+            />
+          </Section>
+          <Section title="Time">
+            <input
+              type="time"
+              className="form-control"
+              value={time}
+              onChange={handleTimeChange}
+              placeholder="Select your time"
+            />
+          </Section>
+        </div>
+      </div>
+    </motion.div>
+  );
 
   return (
-    <motion.div
-      className="offup"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    <motion.div className="offup">
       <div className="row">
         <div className="col-12 col-lg-1"></div> {/* Spacer column for layout */}
         <div className="col-12 col-lg-10">
           <div className="picku">
-            {/* Pickup card */}
-            <motion.div className="card" variants={itemVariants}>
-              <div className="topradio">
-                <input
-                  type="radio"
-                  id="option"
-                  name="options"
-                  value="option"
-                  checked={true}
-                  readOnly
-                />
-                <h5>Pick-Up</h5>
-              </div>
-              <div className="card-body">
-                <div className="container">
-                  <Section title="Location">
-                    <select name="locations" id="pickUpLocs">
-                      {cities.map((city) => (
-                        <option key={city.city} value={city.city}>
-                          {city.city}
-                        </option>
-                      ))}
-                    </select>
-                  </Section>
-                  <Section title="Date">
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="pickUpDate"
-                      value={pickUpDate}
-                      onChange={handlePickUpDateChange}
-                      placeholder="Select your date"
-                    />
-                  </Section>
-                  <Section title="Time">
-                    <input
-                      type="time"
-                      className="form-control"
-                      id="pickUpTime"
-                      value={pickUpTime}
-                      onChange={handlePickUpTimeChange}
-                      placeholder="Select your time"
-                    />
-                  </Section>
-                </div>
-              </div>
-            </motion.div>
-            {/* Arrow icon */}
-            <div className="arrows">
+            {isFlipped
+              ? renderCard("Drop-Off", dropOffDate, dropOffTime, handleDropOffDateChange, handleDropOffTimeChange)
+              : renderCard("Pick-Up", pickUpDate, pickUpTime, handlePickUpDateChange, handlePickUpTimeChange)}
+            <div className="arrows" onClick={handleFlip}>
               <LuArrowUpDown />
             </div>
-            {/* Drop-off card */}
-            <motion.div className="card" variants={itemVariants}>
-              <div className="topradio">
-                <input
-                  type="radio"
-                  id="option"
-                  name="options"
-                  value="option"
-                  checked={true}
-                  readOnly
-                />
-                <h5>Drop-Off</h5>
-              </div>
-              <div className="card-body">
-                <div className="container">
-                  <Section title="Location">
-                    <select name="locations" id="dropOffLocs">
-                      {cities.map((city) => (
-                        <option key={city.city} value={city.city}>
-                          {city.city}
-                        </option>
-                      ))}
-                    </select>
-                  </Section>
-                  <Section title="Date">
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="dropOffDate"
-                      value={dropOffDate}
-                      onChange={handleDropOffDateChange}
-                      placeholder="Select your date"
-                    />
-                  </Section>
-                  <Section title="Time">
-                    <input
-                      type="time"
-                      className="form-control"
-                      id="dropOffTime"
-                      value={dropOffTime}
-                      onChange={handleDropOffTimeChange}
-                      placeholder="Select your time"
-                    />
-                  </Section>
-                </div>
-              </div>
-            </motion.div>
+            {isFlipped
+              ? renderCard("Pick-Up", pickUpDate, pickUpTime, handlePickUpDateChange, handlePickUpTimeChange)
+              : renderCard("Drop-Off", dropOffDate, dropOffTime, handleDropOffDateChange, handleDropOffTimeChange)}
           </div>
         </div>
         <div className="col-12 col-lg-1"></div> {/* Spacer column for layout */}
