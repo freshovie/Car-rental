@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import AOS from "aos";
 import "./footer.scss";
 
@@ -10,6 +12,21 @@ const Footer = () => {
     });
   }, []);
 
+  // Animation variants for the navbar text
+  const textAnimation = {
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <section className="footer">
       <footer className="text-center text-md-start">
@@ -17,7 +34,15 @@ const Footer = () => {
           <div className="row">
             {/* Main footer description section */}
             <div className="col-lg-6 col-md-12 mb-4 mb-md-0" data-aos="fade-up">
-              <h3 className="text-uppercase">MORENT</h3>
+              <Link className="footer-brand" to="/">
+                <motion.div
+                  variants={textAnimation}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  MORENT
+                </motion.div>
+              </Link>
               <p>
                 Our vision is to provide convenience <br />
                 and help increase your sales business.
