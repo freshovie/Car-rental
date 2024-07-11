@@ -8,7 +8,7 @@
   
       .icard {
         .card {
-          height: 100%; // Adjust as needed
+          height: 435px;
           border: 1px solid #ccc;
           border-radius: 8px;
           overflow: hidden;
@@ -102,7 +102,7 @@
   
     @media screen and (max-width: 1200px) {
       .card-tags1 {
-        grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
+        grid-template-columns: repeat(2, 1fr); // 3 columns on medium screens
       }
     }
   

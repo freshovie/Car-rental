@@ -64,12 +64,20 @@
       }
     }
     @media screen and (max-width: 768px) {
+      .footer-brand{
+      justify-content: center;
+      }
       .last {
         flex-direction: column;
         border: none;
         .footer-bask {
           flex-direction: column;
         }
+      }
+    }
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .footer-brand {
+        justify-content: center;
       }
     }
   }

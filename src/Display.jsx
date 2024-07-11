@@ -26,11 +26,12 @@ import NotFound from "./Components/NotFound/NotFound";
 
 const Display = () => {
   return (
+    <React.Fragment>
     <Router>
       <div className="display">
         <Label />
         <Navbar />
-        <div className="content">
+        <div className="contents">
           <Switch>
             <Route exact path="/">
               <CarDisplay />
@@ -67,6 +68,8 @@ const Display = () => {
         <Footer />
       </div>
     </Router>
+    </React.Fragment>
+
   );
 };
 

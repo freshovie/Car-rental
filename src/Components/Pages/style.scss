@@ -312,7 +312,7 @@
         flex: 1 1 100%; /* Full width for small screens */
         margin: 10px;
         .card {
-          height: 550px;
+          height: 465px;
           .card-body {
             .first {
               flex-direction: row;
@@ -521,6 +521,7 @@
         flex: 1 1 100%; /* Full width for small screens */
         margin: 10px;
         .card {
+          height: 455px;
           .card-body {
             .first {
               flex-direction: row;
@@ -675,6 +676,10 @@
         display: none;
       }
     }
+  }
+  @media screen and (max-width: 700px) {
+    margin: 0;
+    margin-top: 10px;
   }
 }
 
@@ -974,6 +979,7 @@
   }
   @media screen and (max-width: 768px) {
     width: auto;
+    margin-left: 0;
     .review-box {
       img {
         width: 10%;
@@ -986,7 +992,6 @@
 .recentCar {
   margin-left: 100px;
   padding: 1px 16px;
-  // height: 1000px;
   .card-tagss {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1067,6 +1072,7 @@
         flex: 1 1 100%; /* Full width for small screens */
         margin: 10px;
         .card {
+          height: 455px;
           .card-body {
             .first {
               flex-direction: row;
@@ -1335,19 +1341,15 @@
   }
   @media screen and (max-width: 768px) {
     margin-right: 0;
-    .confirmation-content {
+    .container {
       button {
         width: 100%;
         margin: 0;
         margin-bottom: 10px;
       }
-      img,
-      h4 {
+      img {
         margin-bottom: 10px;
         margin-top: 10px;
-      }
-      p {
-        width: 18rem;
       }
     }
   }
@@ -1512,6 +1514,11 @@
     .itemrating {
       flex-direction: column;
       display: flex;
+    }
+    .itemsdetails {
+      .itemsprice {
+        flex-direction: column;
+      }
     }
   }
   @media screen and (min-width: 769px) and (max-width: 1241px) {
