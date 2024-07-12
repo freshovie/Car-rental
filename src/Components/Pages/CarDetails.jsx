@@ -5,28 +5,28 @@ import { FaHeart } from "react-icons/fa";
 import StarRating from "./StarRating";
 import { View, View2, View3 } from "../../assets";
 
-const CarDetails = ({ carId }) => {
+const CarDetails = () => {
   const handleRatingChange = (newRating) => {
     console.log("New rating:", newRating);
   };
 
-  const [popularCars, setPopularCars] = useState([]);
+  // const [popularCars, setPopularCars] = useState([]);
   const [liked, setLiked] = useState({});
   const [background, setBackground] = useState(View);
 
-  useEffect(() => {
-    const fetchPopularCars = async () => {
-      try {
-        const response = await fetch("http://localhost:8000/cars");
-        const data = await response.json();
-        setPopularCars(data);
-      } catch (error) {
-        console.error("Error fetching popular cars:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPopularCars = async () => {
+  //     try {
+  //       const response = await fetch("http://localhost:8000/cars");
+  //       const data = await response.json();
+  //       setPopularCars(data);
+  //     } catch (error) {
+  //       console.error("Error fetching popular cars:", error);
+  //     }
+  //   };
 
-    fetchPopularCars();
-  }, []);
+  //   fetchPopularCars();
+  // }, []);
 
   useEffect(() => {
     AOS.init({
@@ -45,12 +45,12 @@ const CarDetails = ({ carId }) => {
     setBackground(newPicture);
   };
 
-  const car = popularCars.find((car) => car.id === carId);
+  // const pictures = popularCars.find((car) => car.id === carId);
 
-  if (!car) {
-    console.log("Car details not found:", carId);
-    return <div>Please wait...</div>;
-  }
+  // if (!car) {
+  //   console.log("Car details not found:", carId);
+  //   return <div>Please wait...</div>;
+  // }
 
   const pictures = [
     { id: 0, name: View },
@@ -100,7 +100,7 @@ const CarDetails = ({ carId }) => {
                 <div className="cata-p">
                   <div className="cata-header">
                     <div className="cata-head">
-                      <h4>{car.carName}</h4>
+                      <h4>{pictures.carName}</h4>
                       <div className="starating">
                         <StarRating
                           totalStars={5}
@@ -116,44 +116,44 @@ const CarDetails = ({ carId }) => {
                       </div>
                     </div>
                     <FaHeart
-                      style={{ color: liked[car.id] ? "red" : "grey" }}
-                      onClick={() => handleLikeClick(car.id)}
+                      style={{ color: liked[pictures.id] ? "red" : "grey" }}
+                      onClick={() => handleLikeClick(pictures.id)}
                     />
                   </div>
-                  <p>{car.description}</p>
+                  <p>{pictures.description}</p>
                   <div className="cata-more">
                     <div className="cata-type">
                       <p>
                         <span>Type Car</span>
                       </p>
-                      <p>{car.carType}</p>
+                      <p>{pictures.carType}</p>
                     </div>
                     <div className="cata-type">
                       <p>
                         <span>Capacity</span>
                       </p>
-                      <p>{car.seatingCapacity}</p>
+                      <p>{pictures.seatingCapacity}</p>
                     </div>
                     <div className="cata-type">
                       <p>
                         <span>Steering</span>
                       </p>
-                      <p>{car.transmission}</p>
+                      <p>{pictures.transmission}</p>
                     </div>
                     <div className="cata-type">
                       <p>
                         <span>Gasoline</span>
                       </p>
-                      <p>{car.fuelCapacity}</p>
+                      <p>{pictures.fuelCapacity}</p>
                     </div>
                   </div>
                   <div className="cata-btn">
                     <div className="cata-price">
                       <p>
-                        ${car.price} / <span>day</span>
+                        ${pictures.price} / <span>day</span>
                       </p>
-                      {car.isGold && (
-                        <s style={{ color: "#90a3bf" }}>${car.isGold}</s>
+                      {pictures.isGold && (
+                        <s style={{ color: "#90a3bf" }}>${pictures.isGold}</s>
                       )}
                     </div>
                     <button>Rent Now</button>
