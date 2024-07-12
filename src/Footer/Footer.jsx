@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import AOS from "aos";
 import "./footer.scss";
@@ -27,6 +26,12 @@ const Footer = () => {
     },
   };
 
+
+  // Function to scroll to top
+  const scrollToTop = () => {
+    window.scroll(0, 0);
+  }
+
   return (
     <section className="footer">
       <footer className="text-center text-md-start">
@@ -34,16 +39,17 @@ const Footer = () => {
           <div className="row">
             {/* Main footer description section */}
             <div className="col-lg-6 col-md-12 mb-4 mb-md-0" data-aos="fade-up">
-              <Link className="footer-brand" to="/">
+              <div className="footer-brand">
                 <motion.div
                   variants={textAnimation}
                   initial="hidden"
                   animate="visible"
+                  onClick={scrollToTop}
                 >
                   MORENT
                 </motion.div>
-              </Link>
-              <p>
+              </div>
+              <p className="footer-p">
                 Our vision is to provide convenience <br />
                 and help increase your sales business.
               </p>

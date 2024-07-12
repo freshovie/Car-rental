@@ -20,18 +20,19 @@ const CarReviews = () => {
 
         {/* Main content column */}
         <div className="col-sm-12 col-md-12 col-lg-10">
-          {/* Reviews header */}
-          <h3>
+         <div className="container">
+           {/* Reviews header */}
+           <h3>
             Reviews <span>13</span>
           </h3>
 
           {/* First review box */}
           <div className="review-box" data-aos="flip-down">
             {/* Reviewer profile image */}
-            <img src={Profile} alt="Profile" />
+            <img src={Profile} alt="Profile"  className="profile-img"/>
 
             {/* Container for the review content */}
-            <div className="container">
+            <div className="container1">
               <div className="review">
                 {/* Reviewer's identity */}
                 <div className="identity">
@@ -63,10 +64,10 @@ const CarReviews = () => {
           {/* Second review box */}
           <div className="review-box" data-aos="flip-down">
             {/* Reviewer profile image */}
-            <img src={Profile2} alt="Profile2" />
+            <img src={Profile2} alt="Profile2" className="profile-img"/>
 
             {/* Container for the review content */}
-            <div className="container">
+            <div className="container1">
               <div className="review">
                 {/* Reviewer's identity */}
                 <div className="identity">
@@ -99,6 +100,7 @@ const CarReviews = () => {
           <p className="showall" href="#!">
             Show all <RiArrowDropDownLine />
           </p>
+         </div>
         </div>
 
         {/* Empty column for spacing on the right side */}

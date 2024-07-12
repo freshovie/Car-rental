@@ -373,7 +373,7 @@
   position: absolute;
   top: 110px;
   left: 0;
-  width: 300px;
+  width: 250px;
   height: 70vh;
   z-index: 0;
   background-color: #fff;
@@ -566,7 +566,7 @@
 
 .offup2 {
   margin-top: 10px;
-  margin-left: 100px;
+  margin-left: 120px;
   padding: 1px 16px;
   .picku {
     display: flex;
@@ -918,60 +918,64 @@
 
 .carreview {
   padding: 20px;
-  margin-left: 100px;
+  margin-left: 150px;
 
-  h3 {
-    color: #1a202c;
-    font-weight: 600;
-    margin-bottom: 10px;
+  .container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    h3 {
+      color: #1a202c;
+      font-weight: 600;
+      margin: 20px 10px;
 
-    span {
-      border-radius: 5px;
-      padding: 5px;
-      color: #fff;
-      background-color: #3563e9;
+      span {
+        border-radius: 5px;
+        padding: 0px 10px;
+        color: #fff;
+        background-color: #3563e9;
+      }
     }
-  }
-  .showall {
-    text-align: center;
-    color: #90a3bf;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-
-  .review-box {
-    display: flex;
-    margin-bottom: 10px;
-    img {
-      width: 5%;
-      height: 5%;
+    .showall {
+      text-align: center;
+      color: #90a3bf;
+      cursor: pointer;
     }
 
-    .container {
-      p {
-        color: #6e7a90;
+    .review-box {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: baseline;
+      .profile-img {
+        max-width: 100px;
       }
 
-      .review {
-        display: flex;
-        justify-content: space-between;
-        gap: 10px;
-        margin-bottom: 10px;
-        .identity {
-          h3 {
-            color: #1a202c;
-          }
-          p {
-            color: #90a3bf;
-          }
+      .container1 {
+        p {
+          color: #6e7a90;
         }
 
-        .date {
-          h3 {
-            color: #1a202c;
+        .review {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          margin-bottom: 10px;
+          .identity {
+            h3 {
+              color: #1a202c;
+            }
+            p {
+              color: #90a3bf;
+            }
           }
-          p {
-            color: #90a3bf;
+
+          .date {
+            h3 {
+              color: #1a202c;
+            }
+            p {
+              color: #90a3bf;
+            }
           }
         }
       }
@@ -980,17 +984,14 @@
   @media screen and (max-width: 768px) {
     width: auto;
     margin-left: 0;
-    .review-box {
-      img {
-        width: 10%;
-        height: 10%;
-      }
+    .review-box{
+      flex-direction: column;
     }
   }
 }
 
 .recentCar {
-  margin-left: 100px;
+  margin-left: 150px;
   padding: 1px 16px;
   .card-tagss {
     display: grid;
