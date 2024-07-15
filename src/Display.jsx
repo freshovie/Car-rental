@@ -26,50 +26,49 @@ import NotFound from "./Components/NotFound/NotFound";
 
 const Display = () => {
   return (
-    <React.Fragment>
-    <Router>
-      <div className="display">
-        <Label />
-        <Navbar />
-        <div className="contents">
-          <Switch>
-            <Route exact path="/">
-              <CarDisplay />
-              <OffUp />
-              <PopularCar />
-              <Recommended />
-              <ShowMore />
-            </Route>
-            <Route path="/category">
-              <Sidebar />
-              <OffUp2 />
-              <Content />
-              <ShowMore />
-            </Route>
-            <Route path="/cardetails">
-              <Sidebar />
-              <Ddetails />
-              <CarReviews />
-              <RecentCar />
-              <Recommend />
-            </Route>
-            <Route path="/payment">
-              <Sidebar2 />
-              <Payment />
-              <Rentalnfo />
-              <PMethod />
-              <Confirmational />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+    <>
+      <Router>
+        <div className="display">
+          <Label />
+          <Navbar />
+          <div className="contents">
+            <Switch>
+              <Route exact path="/">
+                <CarDisplay />
+                <OffUp />
+                <PopularCar />
+                <Recommended />
+                <ShowMore />
+              </Route>
+              <Route path="/category">
+                <Sidebar />
+                <OffUp2 />
+                <Content />
+                <ShowMore />
+              </Route>
+              <Route path="/cardetails">
+                <Sidebar />
+                <Ddetails />
+                <CarReviews />
+                <RecentCar />
+                <Recommend />
+              </Route>
+              <Route path="/payment">
+                <Sidebar2 />
+                <Payment />
+                <Rentalnfo />
+                <PMethod />
+                <Confirmational />
+              </Route>
+              <Route path="*">
+                <NotFound />
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </Router>
-    </React.Fragment>
-
+      </Router>
+    </>
   );
 };
 
