@@ -13,7 +13,7 @@ const PopularCar = () => {
 
   // Fetch car data from the server on component mount
   useEffect(() => {
-    fetch("http://localhost:8000/cars")
+    fetch("/data")
       .then((res) => res.json()) // Parse the JSON response
       .then((data) => {
         setCars(data); // Set the fetched car data to the state
