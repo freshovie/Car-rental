@@ -1,14 +1,11 @@
-import React from "react";
-import Button from "react-bootstrap/Button";
+import "./index.scss";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const App = () => {
+function App() {
   return (
-    <div>
-      <Button className="btn-danger">Here</Button>
+    <div className="App">
+      <h1>Test</h1>
     </div>
   );
-};
+}
 
 export default App;
