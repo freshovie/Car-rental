@@ -2,21 +2,22 @@
 
 .home {
   height: 100vh;
+  width: 100%;
 
   main {
+    padding: 0 5rem;
     height: 100vh;
-    width: 100%;
     background-color: $morentInputBg;
     padding-top: 2rem;
 
     .main_container {
-      width: 85%;
       margin: 0 auto;
 
       .jumbotron {
         margin-top: 2rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 4rem;
 
         .button_light_blue {
@@ -34,6 +35,31 @@
         .jumb_backdrop_position {
           top: -100px;
           left: -110px;
+        }
+      }
+
+      .pickup_dropoff {
+        width: 100%;
+        margin-top: 4rem;
+      }
+
+      .view_all_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        span {
+          font-weight: 500;
+          font-size: 16px;
+          color: $morentPlaceholderText;
+        }
+
+        .view_all_btn {
+          font-weight: 500;
+          background-color: none;
+          color: $morentBlue;
+          cursor: pointer;
         }
       }
     }

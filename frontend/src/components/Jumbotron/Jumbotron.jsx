@@ -21,7 +21,7 @@ const Jumbotron = ({
         <div className="jumbotron_details">
           <h2>{headText}</h2>
           <p>{desc}</p>
-          <Button btnText="Rent Now" className={`${buttonStyle} jumb_btn`} />
+          <Button btnText="Rental Car" className={`${buttonStyle} jumb_btn`} />
         </div>
 
         <div>

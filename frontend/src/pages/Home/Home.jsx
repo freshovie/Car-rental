@@ -8,6 +8,8 @@ import {
   arrowsgroup,
 } from "../../assets/assets";
 import "../Home/Home.scss";
+import PickupDropoff from "../../components/PickupDropoff/PickupDropoff";
+import Button from "../../components/Button/Button";
 
 const Home = () => {
   return (
@@ -16,6 +18,7 @@ const Home = () => {
 
       <main>
         <div className="main_container">
+          {/* jumbotron */}
           <div className="jumbotron">
             <Jumbotron
               headText="The Best Platform for Car Rental"
@@ -33,6 +36,15 @@ const Home = () => {
               buttonStyle="button_light_blue"
               backdropImg={arrowsgroup}
             />
+          </div>
+          {/* pickup_dropoff */}
+          <div className="pickup_dropoff">
+            <PickupDropoff />
+          </div>
+          {/* view_all */}
+          <div className="view_all_container">
+            <span>Popular Car</span>
+            <Button btnText="View All" className="view_all_btn" />
           </div>
         </div>
       </main>
