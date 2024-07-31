@@ -1,0 +1,41 @@
+@import "../../styling/variables";
+
+.home {
+  height: 100vh;
+
+  main {
+    height: 100vh;
+    width: 100%;
+    background-color: $morentInputBg;
+    padding-top: 2rem;
+
+    .main_container {
+      width: 85%;
+      margin: 0 auto;
+
+      .jumbotron {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+
+        .button_light_blue {
+          background-color: $morentBlue2;
+        }
+
+        .button_dark_blue {
+          background-color: $morentBlue;
+        }
+
+        .jumb_one {
+          background-color: #54a6ff;
+        }
+
+        .jumb_backdrop_position {
+          top: -100px;
+          left: -110px;
+        }
+      }
+    }
+  }
+}
