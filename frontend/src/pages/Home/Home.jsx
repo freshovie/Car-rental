@@ -10,6 +10,7 @@ import {
 import "../Home/Home.scss";
 import PickupDropoff from "../../components/PickupDropoff/PickupDropoff";
 import Button from "../../components/Button/Button";
+import CarContainer from "../../components/CarCard/CarContainer";
 
 const Home = () => {
   return (
@@ -45,6 +46,9 @@ const Home = () => {
           <div className="view_all_container">
             <span>Popular Car</span>
             <Button btnText="View All" className="view_all_btn" />
+          </div>
+          <div>
+            <CarContainer />
           </div>
         </div>
       </main>

@@ -1,0 +1,18 @@
+@import "../../styling/variables";
+
+.car_card {
+  width: 304px;
+  height: 344px;
+
+  img {
+    width: 100%;
+  }
+
+  .car_card_icon {
+    cursor: pointer;
+
+    .liked {
+      color: red;
+    }
+  }
+}
