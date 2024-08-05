@@ -3,6 +3,10 @@ import PropTypes from "prop-types";
 import "./CarCard.scss";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoMdHeart } from "react-icons/io";
+import Button from "../Button/Button";
+import { RiSteering2Fill } from "react-icons/ri";
+import { BsFillFuelPumpFill } from "react-icons/bs";
+import { BsPeopleFill } from "react-icons/bs";
 
 const CarCard = ({ car }) => {
   const [liked, setLiked] = useState(false);
@@ -33,18 +37,45 @@ const CarCard = ({ car }) => {
 
   return (
     <div className="car_card">
-      <div>
-        <h3>{car.carName}</h3>
+      <div className="car_name__like_icon">
+        <div>
+          <h3>{car.carName}</h3>
+          <p>{car.carType}</p>
+        </div>
+
         <div className="car_card_icon" onClick={toggleLike}>
           {liked ? <IoMdHeart className="liked" /> : <IoMdHeartEmpty />}
         </div>
       </div>
-      <img src={car.image} alt={car.carName} />
-      <p>Type: {car.carType}</p>
-      <p>Price: ${car.price}/day</p>
-      <p>Fuel Capacity: {car.fuelCapacity}</p>
-      <p>Transmission: {car.transmission}</p>
-      <p>Seating: {car.seatingCapacity}</p>
+
+      <div className="car_details_img">
+        <div className="car_img">
+          <img src={car.image} alt={car.carName} />
+        </div>
+
+        <div className="car_details">
+          <p>
+            <BsFillFuelPumpFill className="car_details_icon"/>
+            {car.fuelCapacity}
+          </p>
+          <p>
+            <RiSteering2Fill className="car_details_icon"/>
+            {car.transmission}
+          </p>
+          <p>
+            <BsPeopleFill className="car_details_icon"/>
+            {car.seatingCapacity}
+          </p>
+        </div>
+      </div>
+
+      <div className="car_price_button">
+        <p>
+          <span>${car.price}/</span>
+          <span>day</span>
+        </p>
+        <Button btnText="Rent Now" className="carBtn" />
+      </div>
     </div>
   );
 };
