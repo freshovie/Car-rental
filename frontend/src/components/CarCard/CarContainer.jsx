@@ -13,7 +13,7 @@ const CarContainer = () => {
           <CarCard key={car.id} car={car} />
         ))}
       </div>
-      <h2>Recommended Cars</h2>
+      <h2 className="recom_car_title">Recommended Cars</h2>
       <div className="car_grid">
         {recommendedCars.map((car) => (
           <CarCard key={car.id} car={car} />

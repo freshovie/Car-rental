@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Jumbotron from "../../components/Jumbotron/Jumbotron";
+import { useNavigate } from "react-router-dom";
 import {
   Koenigsegg,
   NissanGT,
@@ -11,8 +12,15 @@ import "../Home/Home.scss";
 import PickupDropoff from "../../components/PickupDropoff/PickupDropoff";
 import Button from "../../components/Button/Button";
 import CarContainer from "../../components/CarCard/CarContainer";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const goToCategory = () => {
+    navigate("/categoryfilter");
+  };
+
   return (
     <div className="home">
       <Navbar />
@@ -51,7 +59,17 @@ const Home = () => {
             <CarContainer />
           </div>
         </div>
+
+        <div className="btn_main_container">
+          <Button
+            btnText="Show More Cars"
+            className="main_container_btn"
+            func={goToCategory}
+          />
+        </div>
       </main>
+
+      <Footer />
     </div>
   );
 };
