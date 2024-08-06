@@ -5,6 +5,10 @@ footer {
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 768px) {
+    padding: 35px;
+  }
+
   .main_footer {
     display: flex;
     align-items: start;
@@ -22,6 +26,10 @@ footer {
       justify-content: start;
       flex-direction: column;
       margin-top: 40px;
+
+      @media (max-width: 768px) {
+        margin-top: 10px;
+      }
       span {
         font-size: 32px;
         font-weight: bold;
@@ -40,6 +48,10 @@ footer {
       grid-template-columns: repeat(3, 1fr);
       place-items: start start;
       gap: 6rem;
+
+      @media (max-width: 768px) {
+        gap: 1.5rem;
+      }
 
       @media (max-width: 768px) {
         grid-template-columns: repeat(1, 1fr);
