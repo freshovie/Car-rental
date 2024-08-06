@@ -11,6 +11,10 @@ nav {
   z-index: 10000;
   background: $morentWhite;
 
+  @media (max-width: 768px) {
+    padding: 28px 35px;
+  }
+
   .navbar_logo_search {
     display: flex;
     align-items: center;
@@ -26,6 +30,9 @@ nav {
 
     div {
       position: relative;
+      @media (max-width: 768px) {
+        display: none;
+      }
 
       .navbar_logo_search_icon {
         position: absolute;
@@ -77,6 +84,10 @@ nav {
       border-radius: 999px;
       color: $morentDarkGray;
       cursor: pointer;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     div {

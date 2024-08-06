@@ -8,6 +8,10 @@
   padding: 1rem 2.2rem;
   border-radius: 6px;
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
   .jumb_backdrop {
     position: absolute;
 
@@ -29,6 +33,10 @@
       justify-content: start;
       color: $morentWhite;
       gap: 0;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       h2 {
         font-weight: 500;
@@ -52,5 +60,9 @@
     width: 406px;
     height: 111px;
     z-index: 999;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 }
