@@ -7,9 +7,16 @@ import Button from "../Button/Button";
 import { RiSteering2Fill } from "react-icons/ri";
 import { BsFillFuelPumpFill } from "react-icons/bs";
 import { BsPeopleFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const CarCard = ({ car }) => {
   const [liked, setLiked] = useState(false);
+
+  const navigate = useNavigate();
+
+  const goToCarDetails = () => {
+    navigate(`/car/${car.id}`);
+  };
 
   useEffect(() => {
     if (car && car.id) {
@@ -55,15 +62,15 @@ const CarCard = ({ car }) => {
 
         <div className="car_details">
           <p>
-            <BsFillFuelPumpFill className="car_details_icon"/>
+            <BsFillFuelPumpFill className="car_details_icon" />
             {car.fuelCapacity}
           </p>
           <p>
-            <RiSteering2Fill className="car_details_icon"/>
+            <RiSteering2Fill className="car_details_icon" />
             {car.transmission}
           </p>
           <p>
-            <BsPeopleFill className="car_details_icon"/>
+            <BsPeopleFill className="car_details_icon" />
             {car.seatingCapacity}
           </p>
         </div>
@@ -74,7 +81,7 @@ const CarCard = ({ car }) => {
           <span>${car.price}/</span>
           <span>day</span>
         </p>
-        <Button btnText="Rent Now" className="carBtn" />
+        <Button btnText="Rent Now" className="carBtn" func={goToCarDetails} />
       </div>
     </div>
   );
